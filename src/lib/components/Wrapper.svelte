@@ -3,14 +3,17 @@
 
   type Props = {
     backgroundColor?: string;
+    maxWidth?: number;
     children: Snippet;
   };
 
-  let { backgroundColor = "red", children }: Props = $props();
+  let { backgroundColor = "red", maxWidth = 1000, children }: Props = $props();
 </script>
 
 <div style="background-color: {backgroundColor}">
-  <div class="wrapper">{@render children()}</div>
+  <div class="wrapper" style="max-width: {maxWidth}px;">
+    {@render children()}
+  </div>
 </div>
 
 <style>

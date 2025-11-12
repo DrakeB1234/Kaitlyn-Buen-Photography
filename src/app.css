@@ -67,18 +67,27 @@ svg {
 
   --font-size-small: 0.875rem;
   --font-size-base: 1rem;
-  --font-size-large: 1.125rem;
+  --font-size-large: 1.25rem;
   --font-size-xlarge: 1.75rem;
   --font-size-2xlarge: 2rem;
+  --font-size-3xlarge: 3rem;
 
   --radius-small: 4px;
   --radius-base: 8px;
   --radius-large: 16px;
   --radius-full: 99rem;
 
+  --color-primary-xlight: hsl(230, 85%, 60%);
+  --color-primary-light: hsl(230, 70%, 55%);
   --color-primary-base: #2F3D81;
   --color-primary-dark: #1A1F3C;
   --color-primary-xdark: #0C0F25;
+  --color-primary-2xdark: #191a22;
+
+  --color-neutral-base: #D5DDE1;
+  --color-neutral-dark: #7e8ea3;
+  --color-neutral-xdark: #575352;
+
   --color-white: #ffffff;
 
   --color-accent-base: #E6DDD4;
@@ -111,7 +120,7 @@ a {
 
 .body-large {
   font-size: var(--font-size-large);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-base);
   line-height: 1.4;
 }
 
@@ -131,4 +140,10 @@ a {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-base);
   line-height: 1.2;
+}
+
+.package-text-large {
+  font-size: var(--font-size-3xlarge);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
 }

@@ -1,18 +1,14 @@
 <script lang="ts">
   import LogoIcon from "$lib/icons/LogoIcon.svelte";
-    import Links from "./Links.svelte";
+  import Links from "./Links.svelte";
 
   let { hideLogoHeader = false }: { hideLogoHeader?: boolean } = $props();
 </script>
 
 {#if !hideLogoHeader}
-  <main class="header">
-    <div class="wrapper">
-      <div class="logo">
-        <LogoIcon color="var(--color-white)" />
-      </div>
-    </div>
-  </main>
+  <section class="logo">
+    <LogoIcon color="var(--color-white)" />
+  </section>
 {/if}
 
 <nav class="navbar">
@@ -20,13 +16,11 @@
 </nav>
 
 <style>
-  .header {
-    background-color: var(--color-primary-base);
-  }
-  .logo {
+  section.logo {
     display: flex;
     justify-content: center;
     padding: var(--spacing-base);
+    background-color: var(--color-primary-base);
   }
   nav.navbar {
     position: sticky;
