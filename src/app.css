@@ -1,0 +1,134 @@
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --spacing-2xsmall: 0.25rem;
+  --spacing-xsmall: 0.5rem;
+  --spacing-small: 0.75rem;
+  --spacing-base: 1rem;
+  --spacing-large: 1.5rem;
+  --spacing-xlarge: 2rem;
+  --spacing-2xlarge: 3.5rem;
+  --spacing-3xlarge: 5rem;
+
+  --font-family: "Crimson Pro", serif;
+
+  --font-weight-base: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 600;
+
+  --font-size-small: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-large: 1.125rem;
+  --font-size-xlarge: 1.75rem;
+  --font-size-2xlarge: 2rem;
+
+  --radius-small: 4px;
+  --radius-base: 8px;
+  --radius-large: 16px;
+  --radius-full: 99rem;
+
+  --color-primary-base: #2F3D81;
+  --color-primary-dark: #1A1F3C;
+  --color-primary-xdark: #0C0F25;
+  --color-white: #ffffff;
+
+  --color-accent-base: #E6DDD4;
+}
+
+/* Global Overrides */
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-base);
+  color: var(--color-primary-xdark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Text Element Classes */
+.heading-primary {
+  font-size: var(--font-size-2xlarge);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+}
+
+.heading-secondary {
+  font-size: var(--font-size-xlarge);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+}
+
+.body-large {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+}
+
+.body-regular {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: 1.2;
+}
+
+.body-small {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-base);
+  line-height: 1.2;
+}
+
+.navbar-text {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-base);
+  line-height: 1.2;
+}
