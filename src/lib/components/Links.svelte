@@ -1,51 +1,39 @@
 <script lang="ts">
   import { page } from "$app/state";
 
-  type Props = {
-    spacing?: string;
-  };
-
-  let { spacing = "var(--spacing-2xlarge)" }: Props = $props();
-
   const currentPath = $derived(page.url.pathname);
 </script>
 
-<ul role="list" style="gap: {spacing}">
+<ul role="list">
   <li>
     <a class="navbar-text {currentPath === '/' ? 'active' : ''}" href="/"
-      >Home</a
+      >HOME</a
     >
   </li>
   <li>
-    <a class="navbar-text" href="/">About</a>
+    <a class="navbar-text" href="/">ABOUT</a>
   </li>
   <li>
     <a
       class="navbar-text {currentPath === '/pricing' ? 'active' : ''}"
-      href="/pricing">Pricing</a
+      href="/pricing">PRICING</a
     >
   </li>
   <li>
     <a
       class="navbar-text {currentPath === '/gallery' ? 'active' : ''}"
-      href="/gallery">Gallery</a
+      href="/gallery">GALLERY</a
     >
   </li>
   <li>
     <a
       class="navbar-text {currentPath === '/contact' ? 'active' : ''}"
-      href="/contact">Contact</a
+      href="/contact">CONTACT</a
     >
   </li>
 </ul>
 
 <style>
-  ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
   a.active {
     border-bottom: 2px solid var(--color-white);
   }

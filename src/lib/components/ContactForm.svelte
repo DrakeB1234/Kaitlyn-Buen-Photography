@@ -26,7 +26,7 @@
     name="message"
     placeholder="Hello Kaitlyn! I am interested in booking a appointment with you for a couples shoot!"
   ></textarea>
-  <button type="submit">
+  <button type="submit" class="primary">
     <SendIcon size={20} color="var(--color-white)" />
     <p class="body">Send</p>
   </button>
@@ -53,25 +53,6 @@
 
       &::placeholder {
         color: var(--color-neutral-dark);
-      }
-    }
-
-    & button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--spacing-xsmall);
-      padding: var(--spacing-xsmall) var(--spacing-base);
-      margin-top: var(--spacing-base);
-      border-radius: var(--radius-base);
-      border: 1px solid var(--color-primary-base);
-      background-color: var(--color-primary-xlight);
-      color: var(--color-white);
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-
-      &:hover {
-        background-color: var(--color-primary-light);
       }
     }
 

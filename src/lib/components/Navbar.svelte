@@ -1,8 +1,24 @@
 <script lang="ts">
   import LogoIcon from "$lib/icons/LogoIcon.svelte";
+  import { onMount } from "svelte";
   import Links from "./Links.svelte";
+  import Wrapper from "./Wrapper.svelte";
+  import MenuIcon from "$lib/icons/MenuIcon.svelte";
+  import CloseIcon from "$lib/icons/CloseIcon.svelte";
 
   let { hideLogoHeader = false }: { hideLogoHeader?: boolean } = $props();
+
+  let sidebarOpen = $state(false);
+  const toggleSidebar = () => (sidebarOpen = !sidebarOpen);
+  const closeSidebar = () => (sidebarOpen = false);
+
+  onMount(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeSidebar();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  });
 </script>
 
 {#if !hideLogoHeader}
@@ -11,9 +27,34 @@
   </section>
 {/if}
 
-<nav class="navbar">
-  <Links />
-</nav>
+<Wrapper backgroundColor="var(--color-primary-base)">
+  <nav class="navbar-desktop">
+    <Links />
+  </nav>
+</Wrapper>
+
+<section class="navbar-mobile">
+  <button
+    class="icon"
+    onclick={toggleSidebar}
+    aria-label="Open menu"
+    aria-expanded={sidebarOpen}
+  >
+    <MenuIcon />
+  </button>
+</section>
+
+<aside class="sidebar {sidebarOpen ? 'open' : ''}" role="navigation">
+  <div class="links">
+    <Links />
+  </div>
+
+  <div class="exit-button">
+    <button class="icon" onclick={closeSidebar} aria-label="Close menu">
+      <CloseIcon />
+    </button>
+  </div>
+</aside>
 
 <style>
   section.logo {
@@ -22,17 +63,68 @@
     padding: var(--spacing-base);
     background-color: var(--color-primary-base);
   }
-  nav.navbar {
+  .navbar-desktop,
+  .navbar-mobile {
     position: sticky;
-    inset: 0;
+    top: 0;
     color: var(--color-white);
     padding: var(--spacing-base);
     z-index: 10;
     background-color: var(--color-primary-base);
   }
 
+  :global(.navbar-desktop ul) {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .navbar-mobile {
+    display: flex;
+    justify-content: end;
+    padding-block: 0;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    min-height: 100vh;
+    transition: right 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: 10;
+    display: flex;
+    overflow: auto;
+  }
+
+  .sidebar.open {
+    right: 0;
+  }
+
+  .exit-button {
+    background-color: var(--color-white);
+  }
+
+  .links {
+    width: 100%;
+    padding: var(--spacing-2xlarge) var(--spacing-base);
+    padding-left: var(--spacing-2xlarge);
+    background-color: var(--color-primary-base);
+    color: var(--color-white);
+  }
+
+  :global(.sidebar ul) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xlarge);
+  }
+
+  @media (min-width: 40em) {
+    .navbar-mobile {
+      display: none;
+    }
+  }
   @media (max-width: 40em) {
-    nav.navbar {
+    .navbar-desktop {
       display: none;
     }
   }
