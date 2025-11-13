@@ -27,11 +27,11 @@
   </section>
 {/if}
 
-<Wrapper backgroundColor="var(--color-primary-base)">
-  <nav class="navbar-desktop">
-    <Links />
-  </nav>
-</Wrapper>
+<nav class="navbar-desktop">
+  <Wrapper backgroundColor="var(--color-primary-base)">
+    <Links style="justify-content: space-evenly;" />
+  </Wrapper>
+</nav>
 
 <section class="navbar-mobile">
   <button
@@ -46,7 +46,7 @@
 
 <aside class="sidebar {sidebarOpen ? 'open' : ''}" role="navigation">
   <div class="links">
-    <Links />
+    <Links style="flex-direction: column; gap: var(--spacing-large);" />
   </div>
 
   <div class="exit-button">
@@ -66,16 +66,11 @@
   .navbar-desktop,
   .navbar-mobile {
     position: sticky;
-    top: 0;
+    inset: 0;
     color: var(--color-white);
     padding: var(--spacing-base);
     z-index: 10;
     background-color: var(--color-primary-base);
-  }
-
-  :global(.navbar-desktop ul) {
-    display: flex;
-    justify-content: space-evenly;
   }
 
   .navbar-mobile {
@@ -110,12 +105,6 @@
     padding-left: var(--spacing-2xlarge);
     background-color: var(--color-primary-base);
     color: var(--color-white);
-  }
-
-  :global(.sidebar ul) {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xlarge);
   }
 
   @media (min-width: 40em) {

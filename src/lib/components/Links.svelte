@@ -1,10 +1,12 @@
 <script lang="ts">
   import { page } from "$app/state";
 
+  let props = $props<{ style?: string }>();
+
   const currentPath = $derived(page.url.pathname);
 </script>
 
-<ul role="list">
+<ul role="list" style={props.style}>
   <li>
     <a class="navbar-text {currentPath === '/' ? 'active' : ''}" href="/"
       >HOME</a
@@ -34,6 +36,10 @@
 </ul>
 
 <style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
   a.active {
     border-bottom: 2px solid var(--color-white);
   }

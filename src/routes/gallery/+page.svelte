@@ -2,16 +2,16 @@
   import Footer from "$lib/components/Footer.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
-  import { mainCarouselImages } from "$lib/data/imageData";
+  import type { PageProps } from "../$types";
 
-  const photos: string[] = mainCarouselImages;
+  const { data }: PageProps = $props();
 </script>
 
 <Navbar />
 
 <Wrapper backgroundColor="var(--color-white)">
   <section class="masonry">
-    {#each photos as url}
+    {#each data.images as url}
       <img src={url} alt="" loading="lazy" />
     {/each}
   </section>

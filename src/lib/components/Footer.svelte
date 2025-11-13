@@ -4,12 +4,12 @@
   import Wrapper from "./Wrapper.svelte";
 </script>
 
-<Wrapper>
+<Wrapper backgroundColor="var(--color-primary-dark)">
   <section class="footer">
     <SocialLinks size={30} />
     <div class="bottom">
       <div class="links">
-        <Links />
+        <Links style="justify-content: center; gap: var(--spacing-base);" />
       </div>
       <p class="body-small">Callie Buentello ©2025</p>
     </div>
@@ -32,11 +32,5 @@
     & .bottom > p {
       margin-top: var(--spacing-xlarge);
     }
-  }
-  :global(.links ul) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-large);
   }
 </style>
