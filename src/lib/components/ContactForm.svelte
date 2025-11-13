@@ -1,15 +1,27 @@
 <script lang="ts">
   import SendIcon from "$lib/icons/SendIcon.svelte";
 
+  const {
+    labelColor = "var(--color-white)",
+    center = true,
+    maxWidth = 0,
+  }: { labelColor?: string; center?: boolean; maxWidth?: number } = $props();
+
   const handleFormSubmit = (e: SubmitEvent) => {
+    e.preventDefault();
     console.log(e);
   };
 </script>
 
-<form on:submit|preventDefault={handleFormSubmit}>
-  <label for="email">Your Email</label>
+<form
+  onsubmit={handleFormSubmit}
+  style="margin-inline: {center ? 'auto' : 'unset'}; max-width: {maxWidth
+    ? `${maxWidth}px`
+    : 'unset'};"
+>
+  <label for="email" style="color: {labelColor}">Your Email</label>
   <input name="email" placeholder="youremail@gmail.com" />
-  <label for="message">Message</label>
+  <label for="message" style="color: {labelColor}">Message</label>
   <textarea
     name="message"
     placeholder="Hello Kaitlyn! I am interested in booking a appointment with you for a couples shoot!"
@@ -24,7 +36,6 @@
   form {
     display: flex;
     flex-direction: column;
-    max-width: 450px;
     margin-inline: auto;
 
     & label {
@@ -50,7 +61,7 @@
       align-items: center;
       justify-content: center;
       gap: var(--spacing-xsmall);
-      padding: var(--spacing-small) var(--spacing-base);
+      padding: var(--spacing-xsmall) var(--spacing-base);
       margin-top: var(--spacing-base);
       border-radius: var(--radius-base);
       border: 1px solid var(--color-primary-base);

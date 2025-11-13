@@ -16,15 +16,27 @@
       >Home</a
     >
   </li>
-  <li><a class="navbar-text" href="/">About</a></li>
+  <li>
+    <a class="navbar-text" href="/">About</a>
+  </li>
   <li>
     <a
       class="navbar-text {currentPath === '/pricing' ? 'active' : ''}"
       href="/pricing">Pricing</a
     >
   </li>
-  <li><a class="navbar-text" href="/">Gallery</a></li>
-  <li><a class="navbar-text" href="/">Contact</a></li>
+  <li>
+    <a
+      class="navbar-text {currentPath === '/gallery' ? 'active' : ''}"
+      href="/gallery">Gallery</a
+    >
+  </li>
+  <li>
+    <a
+      class="navbar-text {currentPath === '/contact' ? 'active' : ''}"
+      href="/contact">Contact</a
+    >
+  </li>
 </ul>
 
 <style>

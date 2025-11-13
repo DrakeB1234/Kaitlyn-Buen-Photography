@@ -46,7 +46,7 @@
   section.carousel {
     position: relative;
     background-color: #000;
-    max-height: 550px;
+    max-height: 600px;
     overflow: hidden;
   }
 

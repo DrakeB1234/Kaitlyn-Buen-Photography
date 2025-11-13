@@ -6,4 +6,5 @@ export const mainCarouselImages: string[] = [
   "/images/main-carousel/IMG_0206.webp",
   "/images/main-carousel/IMG_9405.webp",
   "/images/main-carousel/IMG_9722.webp",
+  "/picofme.webp",
 ]

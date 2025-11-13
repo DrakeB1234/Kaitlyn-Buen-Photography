@@ -15,7 +15,7 @@
 </Wrapper>
 <Wrapper backgroundColor="var(--color-primary-base)">
   <section class="contact">
-    <ContactForm />
+    <ContactForm maxWidth={450} />
   </section>
 </Wrapper>
 <Wrapper backgroundColor="var(--color-primary-dark)">

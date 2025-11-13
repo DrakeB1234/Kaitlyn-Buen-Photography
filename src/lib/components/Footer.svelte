@@ -4,7 +4,7 @@
 </script>
 
 <section class="footer">
-  <SocialLinks />
+  <SocialLinks size={30} />
   <div class="bottom">
     <Links spacing="var(--spacing-large)" />
     <p class="body-small">Callie Buentello ©2025</p>
@@ -13,12 +13,12 @@
 
 <style>
   .footer {
-    padding-top: var(--spacing-large);
+    padding-top: var(--spacing-2xlarge);
     background-color: var(--color-primary-dark);
     color: var(--color-white);
 
     & .bottom {
-      margin-top: var(--spacing-large);
+      margin-top: var(--spacing-xlarge);
       padding: var(--spacing-base);
       text-align: center;
     }

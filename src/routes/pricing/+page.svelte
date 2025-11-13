@@ -34,9 +34,7 @@
   </main>
 </Wrapper>
 
-<Wrapper backgroundColor="var(--color-primary-dark)">
-  <Footer />
-</Wrapper>
+<Footer />
 
 <style>
   main {
