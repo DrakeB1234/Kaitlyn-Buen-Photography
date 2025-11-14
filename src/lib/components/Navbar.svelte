@@ -11,20 +11,12 @@
   let sidebarOpen = $state(false);
   const toggleSidebar = () => (sidebarOpen = !sidebarOpen);
   const closeSidebar = () => (sidebarOpen = false);
-
-  onMount(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeSidebar();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  });
 </script>
 
 {#if !hideLogoHeader}
-  <section class="logo">
+  <a class="logo" href="/">
     <LogoIcon color="var(--color-white)" />
-  </section>
+  </a>
 {/if}
 
 <nav class="navbar-desktop">
@@ -46,7 +38,9 @@
 
 <aside class="sidebar {sidebarOpen ? 'open' : ''}" role="navigation">
   <div class="links">
-    <Links style="flex-direction: column; gap: var(--spacing-large);" />
+    <Links
+      style="flex-direction: column; align-items: end; gap: var(--spacing-large);"
+    />
   </div>
 
   <div class="exit-button">
@@ -57,7 +51,7 @@
 </aside>
 
 <style>
-  section.logo {
+  a.logo {
     display: flex;
     justify-content: center;
     padding: var(--spacing-base);
@@ -101,8 +95,7 @@
 
   .links {
     width: 100%;
-    padding: var(--spacing-2xlarge) var(--spacing-base);
-    padding-left: var(--spacing-2xlarge);
+    padding: var(--spacing-2xlarge) var(--spacing-2xlarge);
     background-color: var(--color-primary-base);
     color: var(--color-white);
   }

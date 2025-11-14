@@ -13,7 +13,10 @@
     >
   </li>
   <li>
-    <a class="navbar-text" href="/">ABOUT</a>
+    <a
+      class="navbar-text {currentPath === '/about' ? 'active' : ''}"
+      href="/about">ABOUT</a
+    >
   </li>
   <li>
     <a

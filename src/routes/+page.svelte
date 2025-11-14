@@ -24,7 +24,7 @@
 
 <style>
   section.contact {
-    padding: var(--spacing-xlarge) var(--spacing-base);
+    padding: var(--spacing-2xlarge) var(--spacing-base);
     background-color: var(--color-primary-base);
   }
 </style>

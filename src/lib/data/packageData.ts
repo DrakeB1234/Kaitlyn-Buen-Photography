@@ -32,6 +32,16 @@ export const packageData: PackageData[] = [
       "Shot at pre-selected locations",
     ]
   },
+  {
+    name: "Newborns",
+    imageURL: "/images/main-carousel/IMG_0206.webp",
+    price: 50,
+    details: [
+      "30+ edited photos",
+      "2 hour shoot",
+      "Shot in our studio",
+    ]
+  },
 ];
 
 export const packageAdditionsData = {
@@ -39,8 +49,6 @@ export const packageAdditionsData = {
     { price: 40, detail: "Add 10 edited photos" },
   ] as AdditionData[],
   fees: [
-    { price: 40, detail: "Travel fee" },
-    { price: 50, detail: "Extra shooting location" },
-    { minPrice: 100, price: 200, detail: "Studio booking" },
+    { price: 20, detail: "Travel fee" },
   ] as AdditionData[]
 }

@@ -1,4 +1,4 @@
-<section class="about">
+<section id="about" class="about">
   <div class="wrapper">
     <div class="content">
       <img src="/picofme.webp" alt="" />
