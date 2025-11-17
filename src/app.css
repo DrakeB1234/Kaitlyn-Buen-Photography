@@ -139,7 +139,7 @@ button.icon {
 
 .heading-secondary {
   font-size: var(--font-size-xlarge);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.4;
 }
 

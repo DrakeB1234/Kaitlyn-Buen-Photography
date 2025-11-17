@@ -9,7 +9,7 @@
 
 <Navbar />
 
-<Wrapper backgroundColor="var(--color-white)">
+<Wrapper maxWidth={1400} backgroundColor="var(--color-white)">
   <section class="masonry">
     {#each data.images as url}
       <img src={url} alt="" loading="lazy" />

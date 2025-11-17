@@ -7,10 +7,13 @@
   import Reviews from "$lib/components/Reviews.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import { mainCarouselImages } from "$lib/data/imageData";
+  import type { PageProps } from "./$types";
+
+  const { data }: PageProps = $props();
 </script>
 
 <Navbar />
-<Carousel imageData={mainCarouselImages} />
+<Carousel imageData={data.images} />
 <Wrapper backgroundColor="var(--color-accent-base)">
   <About />
   <Reviews />

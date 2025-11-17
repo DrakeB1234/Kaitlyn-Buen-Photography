@@ -7,14 +7,14 @@
     intervalTimeout?: number;
   };
 
-  let { imageData = [], intervalTimeout = 5000 }: Props = $props();
+  let { imageData = [], intervalTimeout = 3500 }: Props = $props();
 
   let currentIndex = $state(0);
   let interval: ReturnType<typeof setInterval>;
 
-  function prev() {
-    currentIndex = (currentIndex - 1 + imageData.length) % imageData.length;
-  }
+  // function prev() {
+  //   currentIndex = (currentIndex - 1 + imageData.length) % imageData.length;
+  // }
 
   function next() {
     currentIndex = (currentIndex + 1) % imageData.length;
