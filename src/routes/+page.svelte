@@ -4,6 +4,7 @@
   import ContactForm from "$lib/components/ContactForm.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
+  import Reviews from "$lib/components/Reviews.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import { mainCarouselImages } from "$lib/data/imageData";
 </script>
@@ -12,6 +13,7 @@
 <Carousel imageData={mainCarouselImages} />
 <Wrapper backgroundColor="var(--color-accent-base)">
   <About />
+  <Reviews />
 </Wrapper>
 <Wrapper backgroundColor="var(--color-primary-base)">
   <section class="contact">

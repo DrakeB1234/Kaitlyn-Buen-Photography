@@ -29,7 +29,7 @@
   });
 </script>
 
-<Wrapper backgroundColor="var(--color-primary-2xdark)">
+<Wrapper maxWidth={850} backgroundColor="var(--color-primary-2xdark)">
   <section class="carousel">
     <div
       class="carousel-track"
@@ -45,7 +45,6 @@
 <style>
   section.carousel {
     position: relative;
-    background-color: #000;
     max-height: 600px;
     overflow: hidden;
   }
@@ -56,6 +55,8 @@
   }
   img {
     width: 100%;
+    height: auto;
     object-fit: cover;
+    object-position: center center;
   }
 </style>
