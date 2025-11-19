@@ -11,7 +11,7 @@
 <Navbar />
 <Wrapper backgroundColor="var(--color-white)" maxWidth={700}>
   <main>
-    {#each data as data}
+    {#each data as data, i (i)}
       <div class="package-image">
         <img src={data.imageURL} alt="" />
         <div class="package-text">
@@ -20,7 +20,7 @@
       </div>
       <div class="package-details">
         <p class="body-large">Starting at ${data.price}</p>
-        {#each data.details as detail}
+        {#each data.details as detail, i (i)}
           <p class="body-large">{detail}</p>
         {/each}
       </div>
@@ -30,14 +30,14 @@
       <p class="heading-secondary">Package Additions / Fees</p>
       <div class="package-details">
         <p class="body-large title">Additions</p>
-        {#each additionsData.additions as item}
+        {#each additionsData.additions as item, i (i)}
           <p class="body-large">
             ${item.minPrice ? `${item.minPrice} - ${item.price}` : item.price}
             {item.detail}
           </p>
         {/each}
         <p class="body-large title">Fees (contact me for more info)</p>
-        {#each additionsData.fees as item}
+        {#each additionsData.fees as item, i (i)}
           <p class="body-large">
             ${item.minPrice ? `${item.minPrice} - ${item.price}` : item.price}
             {item.detail}

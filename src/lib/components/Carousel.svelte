@@ -1,9 +1,9 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { onDestroy, onMount } from "svelte";
-  import { createSwipe } from "$lib/helpers/swipe.svelte";
   import { cubicIn } from "svelte/easing";
   import ArrowIcon from "$lib/icons/ArrowIcon.svelte";
+  import { gestures } from "$lib/helpers/gestures";
 
   type Props = {
     imageData: string[];
@@ -48,7 +48,7 @@
 
 <section
   class="carousel"
-  use:createSwipe={{
+  use:gestures={{
     onSwipeLeft: manualNextImage,
     onSwipeRight: manualPrevImage,
   }}

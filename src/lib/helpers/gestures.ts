@@ -1,3 +1,5 @@
+import type { Action } from "svelte/action";
+
 const TOUCH_THRESHOLD = 100;
 
 export type SwipeHandlers = {
@@ -5,7 +7,7 @@ export type SwipeHandlers = {
   onSwipeRight: () => void;
 };
 
-export function createSwipe(node: HTMLElement, handlers: SwipeHandlers) {
+export const gestures: Action<HTMLElement, SwipeHandlers> = (node, handlers) => {
   let startX = 0;
 
   function handleTouchStart(e: TouchEvent) {
@@ -16,8 +18,11 @@ export function createSwipe(node: HTMLElement, handlers: SwipeHandlers) {
     const endX = e.changedTouches[0].clientX;
     const diff = startX - endX;
 
-    if (diff > TOUCH_THRESHOLD && endX > TOUCH_THRESHOLD) handlers.onSwipeLeft();
-    else if (diff < -TOUCH_THRESHOLD && endX > TOUCH_THRESHOLD) handlers.onSwipeRight();
+    if (diff > TOUCH_THRESHOLD && endX > TOUCH_THRESHOLD) {
+      handlers?.onSwipeLeft?.();
+    } else if (diff < -TOUCH_THRESHOLD && endX > TOUCH_THRESHOLD) {
+      handlers?.onSwipeRight?.();
+    }
   }
 
   $effect(() => {
@@ -29,5 +34,4 @@ export function createSwipe(node: HTMLElement, handlers: SwipeHandlers) {
       node.removeEventListener("touchend", handleTouchEnd);
     };
   });
-
-}
+};

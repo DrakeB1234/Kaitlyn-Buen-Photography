@@ -25,7 +25,7 @@
 {/if}
 <Wrapper maxWidth={1400} backgroundColor="var(--color-white)">
   <section class="masonry">
-    {#each data.images as url}
+    {#each data.images as url (url)}
       <img
         src={url}
         alt=""
