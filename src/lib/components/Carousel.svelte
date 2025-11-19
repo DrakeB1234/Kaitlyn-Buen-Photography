@@ -131,6 +131,7 @@
     transform: scale(1.1);
     transition: background-image 0.4s ease-in-out;
     z-index: -1;
+    background-color: var(--color-white);
   }
 
   @media (max-width: 40em) {

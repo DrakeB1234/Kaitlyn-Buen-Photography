@@ -1,18 +1,34 @@
 <script lang="ts">
   import Footer from "$lib/components/Footer.svelte";
+  import FullImage from "$lib/components/FullImage.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import type { PageProps } from "../$types";
 
   const { data }: PageProps = $props();
+  let showFullImage: boolean = $state(false);
+  let selectedImageSrc: string = $state("");
+
+  function handleImgClick(src: string) {
+    selectedImageSrc = src;
+    showFullImage = true;
+  }
 </script>
 
 <Navbar />
 
+{#if showFullImage}
+  <FullImage
+    imgSrc={selectedImageSrc}
+    closeFunc={() => (showFullImage = false)}
+  />
+{/if}
 <Wrapper maxWidth={1400} backgroundColor="var(--color-white)">
   <section class="masonry">
     {#each data.images as url}
-      <img src={url} alt="" loading="lazy" />
+      <button onclick={() => handleImgClick(url)}
+        ><img src={url} alt="" loading="lazy" /></button
+      >
     {/each}
   </section>
 </Wrapper>
