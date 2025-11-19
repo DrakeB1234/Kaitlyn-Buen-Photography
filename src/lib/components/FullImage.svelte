@@ -1,6 +1,7 @@
 <script lang="ts">
   import CloseIcon from "$lib/icons/CloseIcon.svelte";
   import ShareIcon from "$lib/icons/ShareIcon.svelte";
+  import Wrapper from "./Wrapper.svelte";
 
   type Props = {
     imgSrc: string;
@@ -20,20 +21,22 @@
 </script>
 
 <div class="full-image-backdrop" onclick={closeFunc} role="none">
-  <div class="top-bar" onclick={(e) => e.stopPropagation()} role="none">
-    <button class="reset" onclick={handleSharePressed}>
-      <ShareIcon />
-    </button>
-    <button class="reset" onclick={closeFunc}>
-      <CloseIcon size={24} color="var(--color-white)" />
-    </button>
-  </div>
-  <img
-    src={imgSrc}
-    alt={imgSrc}
-    onclick={(e) => e.stopPropagation()}
-    role="none"
-  />
+  <Wrapper backgroundColor="transparent">
+    <div class="top-bar" onclick={(e) => e.stopPropagation()} role="none">
+      <button class="reset" onclick={handleSharePressed}>
+        <ShareIcon />
+      </button>
+      <button class="reset" onclick={closeFunc}>
+        <CloseIcon size={24} color="var(--color-white)" />
+      </button>
+    </div>
+    <img
+      src={imgSrc}
+      alt={imgSrc}
+      onclick={(e) => e.stopPropagation()}
+      role="none"
+    />
+  </Wrapper>
 </div>
 
 <style>
@@ -50,5 +53,7 @@
     inset: 0;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 10;
+    overflow-y: auto;
+    padding-bottom: var(--spacing-large);
   }
 </style>

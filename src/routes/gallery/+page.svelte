@@ -26,9 +26,13 @@
 <Wrapper maxWidth={1400} backgroundColor="var(--color-white)">
   <section class="masonry">
     {#each data.images as url}
-      <button onclick={() => handleImgClick(url)}
-        ><img src={url} alt="" loading="lazy" /></button
-      >
+      <img
+        src={url}
+        alt=""
+        loading="lazy"
+        onclick={() => handleImgClick(url)}
+        role="none"
+      />
     {/each}
   </section>
 </Wrapper>
@@ -38,7 +42,7 @@
   .masonry {
     column-count: 3;
     column-gap: var(--spacing-xsmall);
-    padding: var(--spacing-base);
+    padding: var(--spacing-xsmall);
     padding-bottom: var(--spacing-2xlarge);
   }
 
@@ -46,6 +50,7 @@
     width: 100%;
     object-fit: cover;
     margin-bottom: var(--spacing-xsmall);
+    cursor: pointer;
   }
 
   @media (max-width: 50em) {
