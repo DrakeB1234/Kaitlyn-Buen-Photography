@@ -43,14 +43,11 @@
 <section
   class="carousel"
   use:createSwipe={{
-    onSwipeLeft: () => handleManualImageChange("prev"),
-    onSwipeRight: () => handleManualImageChange("next"),
+    onSwipeLeft: () => handleManualImageChange("next"),
+    onSwipeRight: () => handleManualImageChange("prev"),
   }}
 >
-  <div
-    class="background"
-    style="background-image: url({imageData[currentIndex]});"
-  ></div>
+  <div class="background" style="background-image: url({imageData[0]});"></div>
 
   <div class="carousel-content">
     {#each imageData as img, i}
@@ -129,7 +126,6 @@
     background-position: center;
     filter: blur(10px) brightness(0.6);
     transform: scale(1.1);
-    transition: background-image 0.4s ease-in-out;
     z-index: -1;
     background-color: var(--color-white);
   }

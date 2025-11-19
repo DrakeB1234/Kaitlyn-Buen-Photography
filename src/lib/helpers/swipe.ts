@@ -7,32 +7,25 @@ export type SwipeHandlers = {
 
 export function createSwipe(node: HTMLElement, handlers: SwipeHandlers) {
   let startX = 0;
-  let endX = 0;
 
   function handleTouchStart(e: TouchEvent) {
     startX = e.touches[0].clientX;
   }
 
-  function handleTouchMove(e: TouchEvent) {
-    endX = e.touches[0].clientX;
-  }
-
-  function handleTouchEnd() {
+  function handleTouchEnd(e: TouchEvent) {
+    const endX = e.changedTouches[0].clientX;
     const diff = startX - endX;
 
     if (diff > TOUCH_THRESHOLD && endX > TOUCH_THRESHOLD) handlers.onSwipeLeft();
-    if (diff < -TOUCH_THRESHOLD && endX > TOUCH_THRESHOLD) handlers.onSwipeRight();
+    else if (diff < -TOUCH_THRESHOLD && endX > TOUCH_THRESHOLD) handlers.onSwipeRight();
   }
 
-  node.addEventListener("touchstart", handleTouchStart);
-  node.addEventListener("touchmove", handleTouchMove);
-  node.addEventListener("touchend", handleTouchEnd);
+  node.addEventListener("touchstart", handleTouchStart, { passive: true });
+  node.addEventListener("touchend", handleTouchEnd, { passive: true });
 
-  // clean-up for Svelte
   return {
     destroy() {
       node.removeEventListener("touchstart", handleTouchStart);
-      node.removeEventListener("touchmove", handleTouchMove);
       node.removeEventListener("touchend", handleTouchEnd);
     }
   };
