@@ -6,7 +6,6 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import Reviews from "$lib/components/Reviews.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
-  import { mainCarouselImages } from "$lib/data/imageData";
   import type { PageProps } from "./$types";
 
   const { data }: PageProps = $props();

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { onDestroy, onMount } from "svelte";
-  import { createSwipe } from "$lib/helpers/swipe";
+  import { createSwipe } from "$lib/helpers/swipe.svelte";
   import { cubicIn } from "svelte/easing";
   import ArrowIcon from "$lib/icons/ArrowIcon.svelte";
 
@@ -15,12 +15,18 @@
   let currentIndex = $state(0);
   let interval: ReturnType<typeof setInterval> | null;
 
-  function handleManualImageChange(direction: "prev" | "next") {
+  function manualPrevImage() {
     if (interval !== null) clearInterval(interval);
     interval = null;
 
-    if (direction === "prev") prevImage();
-    if (direction === "next") nextImage();
+    prevImage();
+  }
+
+  function manualNextImage() {
+    if (interval !== null) clearInterval(interval);
+    interval = null;
+
+    nextImage();
   }
 
   function prevImage() {
@@ -43,14 +49,14 @@
 <section
   class="carousel"
   use:createSwipe={{
-    onSwipeLeft: () => handleManualImageChange("next"),
-    onSwipeRight: () => handleManualImageChange("prev"),
+    onSwipeLeft: manualNextImage,
+    onSwipeRight: manualPrevImage,
   }}
 >
   <div class="background" style="background-image: url({imageData[0]});"></div>
 
   <div class="carousel-content">
-    {#each imageData as img, i}
+    {#each imageData as img, i (img)}
       {#if i === currentIndex}
         <img
           src={img}
@@ -63,11 +69,11 @@
     {/each}
     <div class="controls">
       <div class="control-container">
-        <button class="reset" onclick={() => handleManualImageChange("prev")}>
+        <button class="reset" onclick={manualPrevImage}>
           <ArrowIcon />
         </button>
         <p class="body-large">{currentIndex + 1}/{imageData.length}</p>
-        <button class="reset" onclick={() => handleManualImageChange("next")}>
+        <button class="reset" onclick={manualNextImage}>
           <ArrowIcon flip />
         </button>
       </div>

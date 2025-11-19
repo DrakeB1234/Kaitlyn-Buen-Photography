@@ -20,13 +20,14 @@ export function createSwipe(node: HTMLElement, handlers: SwipeHandlers) {
     else if (diff < -TOUCH_THRESHOLD && endX > TOUCH_THRESHOLD) handlers.onSwipeRight();
   }
 
-  node.addEventListener("touchstart", handleTouchStart, { passive: true });
-  node.addEventListener("touchend", handleTouchEnd, { passive: true });
+  $effect(() => {
+    node.addEventListener("touchstart", handleTouchStart, { passive: true });
+    node.addEventListener("touchend", handleTouchEnd, { passive: true });
 
-  return {
-    destroy() {
+    return () => {
       node.removeEventListener("touchstart", handleTouchStart);
       node.removeEventListener("touchend", handleTouchEnd);
-    }
-  };
+    };
+  });
+
 }
