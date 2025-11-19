@@ -5,12 +5,18 @@
     backgroundColor?: string;
     maxWidth?: number;
     children: Snippet;
+    style?: string;
   };
 
-  let { backgroundColor = "red", maxWidth = 1000, children }: Props = $props();
+  let {
+    backgroundColor = "red",
+    maxWidth = 1000,
+    style = "",
+    children,
+  }: Props = $props();
 </script>
 
-<div style="background-color: {backgroundColor}">
+<div style="background-color: {backgroundColor}; {style}">
   <div class="wrapper" style="max-width: {maxWidth}px;">
     {@render children()}
   </div>

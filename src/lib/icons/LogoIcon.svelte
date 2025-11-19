@@ -8,8 +8,8 @@
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width={180}
-  height={180}
+  width={170}
+  height={170}
   fill="none"
   viewBox="0 0 200 200"
 >
@@ -35,8 +35,7 @@
 <style>
   @media (max-width: 40em) {
     svg {
-      width: 100%;
-      max-width: 130px;
+      max-width: 140px;
       height: auto;
     }
   }

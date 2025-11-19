@@ -1,6 +1,5 @@
 <script lang="ts">
   import LogoIcon from "$lib/icons/LogoIcon.svelte";
-  import { onMount } from "svelte";
   import Links from "./Links.svelte";
   import Wrapper from "./Wrapper.svelte";
   import MenuIcon from "$lib/icons/MenuIcon.svelte";
@@ -14,9 +13,11 @@
 </script>
 
 {#if !hideLogoHeader}
-  <a class="logo" href="/">
-    <LogoIcon color="var(--color-white)" />
-  </a>
+  <div class="logo">
+    <a href="/">
+      <LogoIcon color="var(--color-white)" />
+    </a>
+  </div>
 {/if}
 
 <nav class="navbar-desktop">
@@ -51,7 +52,7 @@
 </aside>
 
 <style>
-  a.logo {
+  div.logo {
     display: flex;
     justify-content: center;
     padding: var(--spacing-base);
@@ -60,7 +61,7 @@
   .navbar-desktop,
   .navbar-mobile {
     position: sticky;
-    inset: 0;
+    top: 0;
     color: var(--color-white);
     padding: var(--spacing-base);
     z-index: 10;
@@ -83,6 +84,7 @@
     z-index: 10;
     display: flex;
     overflow: auto;
+    background-color: var(--color-primary-base);
   }
 
   .sidebar.open {
@@ -96,7 +98,6 @@
   .links {
     width: 100%;
     padding: var(--spacing-2xlarge) var(--spacing-2xlarge);
-    background-color: var(--color-primary-base);
     color: var(--color-white);
   }
 

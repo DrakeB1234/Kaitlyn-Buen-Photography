@@ -1,6 +1,9 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
   import { onDestroy, onMount } from "svelte";
-  import Wrapper from "./Wrapper.svelte";
+  import { createSwipe } from "$lib/helpers/swipe";
+  import { cubicIn } from "svelte/easing";
+  import ArrowIcon from "$lib/icons/ArrowIcon.svelte";
 
   type Props = {
     imageData: string[];
@@ -10,53 +13,133 @@
   let { imageData = [], intervalTimeout = 3500 }: Props = $props();
 
   let currentIndex = $state(0);
-  let interval: ReturnType<typeof setInterval>;
+  let interval: ReturnType<typeof setInterval> | null;
 
-  // function prev() {
-  //   currentIndex = (currentIndex - 1 + imageData.length) % imageData.length;
-  // }
+  function handleManualImageChange(direction: "prev" | "next") {
+    if (interval !== null) clearInterval(interval);
+    interval = null;
 
-  function next() {
+    if (direction === "prev") prevImage();
+    if (direction === "next") nextImage();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + imageData.length) % imageData.length;
+  }
+
+  function nextImage() {
     currentIndex = (currentIndex + 1) % imageData.length;
   }
 
   onMount(() => {
-    interval = setInterval(next, intervalTimeout);
+    interval = setInterval(nextImage, intervalTimeout);
   });
 
   onDestroy(() => {
-    clearInterval(interval);
+    if (interval !== null) clearInterval(interval);
   });
 </script>
 
-<Wrapper maxWidth={850} backgroundColor="var(--color-primary-2xdark)">
-  <section class="carousel">
-    <div
-      class="carousel-track"
-      style="transform: translateX(-{currentIndex * 100}%)"
-    >
-      {#each imageData as img, i}
-        <img src={img} alt={`Slide ${i + 1}`} loading="lazy" />
-      {/each}
+<section
+  class="carousel"
+  use:createSwipe={{
+    onSwipeLeft: () => handleManualImageChange("prev"),
+    onSwipeRight: () => handleManualImageChange("next"),
+  }}
+>
+  <div
+    class="background"
+    style="background-image: url({imageData[currentIndex]});"
+  ></div>
+
+  <div class="carousel-content">
+    {#each imageData as img, i}
+      {#if i === currentIndex}
+        <img
+          src={img}
+          alt={`Slide ${i + 1}`}
+          class="fade-image"
+          loading="lazy"
+          transition:fade={{ duration: 450, easing: cubicIn }}
+        />
+      {/if}
+    {/each}
+    <div class="controls">
+      <div class="control-container">
+        <button class="reset" onclick={() => handleManualImageChange("prev")}>
+          <ArrowIcon />
+        </button>
+        <p class="body-large">{currentIndex + 1}/{imageData.length}</p>
+        <button class="reset" onclick={() => handleManualImageChange("next")}>
+          <ArrowIcon flip />
+        </button>
+      </div>
     </div>
-  </section>
-</Wrapper>
+  </div>
+</section>
 
 <style>
   section.carousel {
     position: relative;
-    max-height: 600px;
     overflow: hidden;
   }
-
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+  .carousel-content {
+    position: relative;
+    min-height: 700px;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    margin-inline: auto;
   }
-  img {
+
+  .fade-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: 50% 30%;
+  }
+  .controls {
+    position: absolute;
+    inset: 0;
+    top: unset;
+    padding: var(--spacing-small);
+    color: var(--color-white);
+  }
+  .control-container {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: var(--spacing-base);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: var(--spacing-2xsmall) var(--spacing-small);
+    border-radius: var(--radius-base);
+  }
+  .control-container p {
+    min-width: 3rem;
+    text-align: center;
+  }
+
+  div.background {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(0.6);
+    transform: scale(1.1);
+    transition: background-image 0.4s ease-in-out;
+    z-index: -1;
+  }
+
+  @media (max-width: 40em) {
+    div.background {
+      all: unset;
+    }
+    .carousel-content {
+      min-height: 350px;
+      width: 100%;
+    }
   }
 </style>

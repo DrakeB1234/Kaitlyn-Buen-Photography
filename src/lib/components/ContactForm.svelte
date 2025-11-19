@@ -7,29 +7,32 @@
     maxWidth = 0,
   }: { labelColor?: string; center?: boolean; maxWidth?: number } = $props();
 
-  const handleFormSubmit = (e: SubmitEvent) => {
-    e.preventDefault();
-    console.log(e);
-  };
+  const emailto: string = "dkbuentello@gmail.com";
+  let subject: string = $state("Photography Services");
+  let message: string = $state("");
 </script>
 
 <form
-  onsubmit={handleFormSubmit}
   style="margin-inline: {center ? 'auto' : 'unset'}; max-width: {maxWidth
     ? `${maxWidth}px`
     : 'unset'};"
 >
-  <label for="email" style="color: {labelColor}">Your Email</label>
-  <input name="email" placeholder="youremail@gmail.com" />
+  <label for="subject" style="color: {labelColor}">Subject</label>
+  <input name="subject" placeholder="Subject" bind:value={subject} />
+
   <label for="message" style="color: {labelColor}">Message</label>
   <textarea
     name="message"
     placeholder="Hello Kaitlyn! I am interested in booking a appointment with you for a couples shoot!"
+    bind:value={message}
   ></textarea>
-  <button type="submit" class="primary">
+  <a
+    href="mailto:{emailto}?subject={subject}&body={message}"
+    class="button-primary"
+  >
     <SendIcon size={20} color="var(--color-white)" />
     <p class="body">Send</p>
-  </button>
+  </a>
 </form>
 
 <style>
@@ -43,8 +46,8 @@
       margin-bottom: var(--spacing-xsmall);
     }
 
-    & input,
-    textarea {
+    & textarea,
+    input {
       padding: var(--spacing-small) var(--spacing-small);
       border-radius: var(--radius-small);
       border: 1px solid var(--color-neutral-base);
