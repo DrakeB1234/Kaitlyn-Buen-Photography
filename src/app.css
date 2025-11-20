@@ -47,13 +47,28 @@ svg {
 /* Using locally hosted fonts */
 
 @font-face {
-  font-family: "Crimson Pro";
-  src: url("/fonts/CrimsonPro-VariableFont_wght.woff2") format("woff2-variations");
-  font-weight: 400 600;
-  font-display: swap;
+  font-family: 'Crimson Pro';
+  src: url('/fonts/crimson-pro-v28-latin-regular.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url('/fonts/crimson-pro-v28-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url('/fonts/crimson-pro-v28-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --spacing-2xsmall: 0.25rem;
