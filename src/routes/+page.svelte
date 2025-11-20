@@ -13,7 +13,7 @@
 
 <Navbar />
 <Carousel imageData={data.images} />
-<Wrapper backgroundColor="var(--color-accent-base)">
+<Wrapper maxWidth={1100} backgroundColor="var(--color-accent-base)">
   <About />
   <Reviews />
 </Wrapper>

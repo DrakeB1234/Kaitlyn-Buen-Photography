@@ -1,9 +1,10 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { onDestroy, onMount } from "svelte";
-  import { createSwipe } from "$lib/helpers/swipe.svelte";
+  import { gestures } from "$lib/helpers/gestures";
   import { cubicIn } from "svelte/easing";
-  import ArrowIcon from "$lib/icons/ArrowIcon.svelte";
+  import LeftArrowIcon from "$lib/icons/LeftArrowIcon.svelte";
+  import RightArrowIcon from "$lib/icons/RightArrowIcon.svelte";
 
   type Props = {
     imageData: string[];
@@ -14,11 +15,6 @@
 
   let currentIndex = $state(0);
   let interval: ReturnType<typeof setInterval> | null;
-
-  const swipeFunc = {
-    onSwipeLeft: manualNextImage,
-    onSwipeRight: manualPrevImage,
-  };
 
   function manualPrevImage() {
     if (interval !== null) clearInterval(interval);
@@ -51,29 +47,34 @@
   });
 </script>
 
-<section class="carousel" use:createSwipe={swipeFunc}>
+<section
+  class="carousel"
+  use:gestures
+  onswipeleft={manualNextImage}
+  onswiperight={manualPrevImage}
+>
   <div class="background" style="background-image: url({imageData[0]});"></div>
 
   <div class="carousel-content">
-    {#each imageData as img, i (img)}
-      {#if i === currentIndex}
-        <img
-          src={img}
-          alt={`Slide ${i + 1}`}
-          class="fade-image"
-          loading="lazy"
-          transition:fade={{ duration: 450, easing: cubicIn }}
-        />
-      {/if}
-    {/each}
+    {#key currentIndex}
+      <img
+        src={imageData[currentIndex]}
+        alt={`Slide ${currentIndex + 1}`}
+        class="fade-image"
+        loading="lazy"
+        transition:fade={{ duration: 450, easing: cubicIn }}
+        draggable="false"
+      />
+    {/key}
+
     <div class="controls">
       <div class="control-container">
         <button class="reset" onclick={manualPrevImage}>
-          <ArrowIcon />
+          <LeftArrowIcon />
         </button>
         <p class="body-large">{currentIndex + 1}/{imageData.length}</p>
         <button class="reset" onclick={manualNextImage}>
-          <ArrowIcon flip />
+          <RightArrowIcon />
         </button>
       </div>
     </div>
@@ -120,7 +121,7 @@
     border-radius: var(--radius-base);
   }
   .control-container p {
-    min-width: 3rem;
+    min-width: 5ch;
     text-align: center;
   }
 

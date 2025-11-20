@@ -27,11 +27,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-2xlarge) var(--spacing-xlarge);
+    place-items: center;
     margin-top: var(--spacing-xlarge);
   }
 
   .review {
     text-align: center;
+  }
+  .review p:first-child {
+    max-width: var(--line-width-xsmall);
   }
   .review > p:last-child {
     margin-top: var(--spacing-base);

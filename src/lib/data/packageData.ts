@@ -14,12 +14,12 @@ type AdditionData = {
 export const packageData: PackageData[] = [
   {
     name: "Family",
-    imageURL: "/images/main-carousel/IMG_9998.webp",
+    imageURL: "/images/main-carousel/IMG_0005.webp",
     price: 75,
     details: [
-      "25+ edited photos",
-      "1 hour shoot",
-      "Shot at pre-selected locations",
+      "20-25+ edited photos",
+      "1 hour photoshoot",
+      "Shot at pre-selected locations, contact for more information",
     ]
   },
   {
@@ -27,28 +27,40 @@ export const packageData: PackageData[] = [
     imageURL: "/images/main-carousel/IMG_9509.webp",
     price: 50,
     details: [
-      "20+ edited photos",
-      "30 minute shoot",
-      "Shot at pre-selected locations",
+      "10-15+ edited photos",
+      "45 minute photoshoot",
+      "Shot at pre-selected locations, contact for more information",
     ]
   },
   {
-    name: "Newborns",
-    imageURL: "/images/main-carousel/IMG_0206.webp",
+    name: "Children",
+    imageURL: "/images/main-carousel/IMG_9719.webp",
     price: 50,
     details: [
-      "30+ edited photos",
-      "2 hour shoot",
-      "Shot in our studio",
+      "10-15+ edited photos",
+      "45 minute photoshoot",
+      "Shot at pre-selected locations, contact for more information",
+    ]
+  },
+  {
+    name: "Seniors",
+    imageURL: "/images/main-carousel/IMG_9346.webp",
+    price: 75,
+    details: [
+      "20-25+ edited photos",
+      "1 hour photoshoot",
+      "1 outfit change",
+      "Shot at pre-selected locations, contact for more information",
     ]
   },
 ];
 
 export const packageAdditionsData = {
   additions: [
-    { price: 40, detail: "Add 10 edited photos" },
+    { price: 25, detail: "Add 10 edited photos" },
   ] as AdditionData[],
   fees: [
     { price: 20, detail: "Travel fee" },
+    { price: 15, detail: "Non-refundable deposit that goes towards the full package price to hold your booking." },
   ] as AdditionData[]
 }

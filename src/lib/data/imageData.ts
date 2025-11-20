@@ -1,5 +1,6 @@
 // Auto-generated — DO NOT EDIT
 export const mainCarouselImages: string[] = [
+  "/images/main-carousel/IMG_0005.webp",
   "/images/main-carousel/IMG_0053.webp",
   "/images/main-carousel/IMG_0056.webp",
   "/images/main-carousel/IMG_0206.webp",
@@ -8,6 +9,5 @@ export const mainCarouselImages: string[] = [
   "/images/main-carousel/IMG_9405.webp",
   "/images/main-carousel/IMG_9437.webp",
   "/images/main-carousel/IMG_9509.webp",
-  "/images/main-carousel/IMG_9719.webp",
-  "/images/main-carousel/IMG_9998.webp"
+  "/images/main-carousel/IMG_9719.webp"
 ];

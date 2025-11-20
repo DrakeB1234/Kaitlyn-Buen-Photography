@@ -44,6 +44,17 @@ svg {
   display: block;
 }
 
+/* Using locally hosted fonts */
+
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("/fonts/CrimsonPro-VariableFont_wght.woff2") format("woff2-variations");
+  font-weight: 400 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+
 :root {
   --spacing-2xsmall: 0.25rem;
   --spacing-xsmall: 0.5rem;
@@ -66,6 +77,12 @@ svg {
   --font-size-xlarge: 1.75rem;
   --font-size-2xlarge: 2rem;
   --font-size-3xlarge: 3rem;
+
+  --line-width-xsmall: 40ch;
+  --line-width-small: 50ch;
+  --line-width-base: 60ch;
+  --line-width-large: 70ch;
+  --line-width-xlarge: 80ch;
 
   --radius-small: 4px;
   --radius-base: 8px;

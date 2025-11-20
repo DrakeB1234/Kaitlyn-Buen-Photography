@@ -46,6 +46,7 @@
     justify-content: end;
     padding: var(--spacing-small) var(--spacing-base);
     background-color: var(--color-primary-2xdark);
+    margin-top: var(--spacing-xlarge);
   }
 
   .full-image-backdrop {
@@ -55,5 +56,17 @@
     z-index: 10;
     overflow-y: auto;
     padding-bottom: var(--spacing-large);
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .top-bar {
+      max-width: 600px;
+      margin-inline: auto;
+      margin-top: 0;
+    }
+    img {
+      max-width: 600px;
+      margin-inline: auto;
+    }
   }
 </style>
