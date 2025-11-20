@@ -1,9 +1,9 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { onDestroy, onMount } from "svelte";
+  import { createSwipe } from "$lib/helpers/swipe.svelte";
   import { cubicIn } from "svelte/easing";
   import ArrowIcon from "$lib/icons/ArrowIcon.svelte";
-  import { gestures } from "$lib/helpers/gestures";
 
   type Props = {
     imageData: string[];
@@ -14,6 +14,11 @@
 
   let currentIndex = $state(0);
   let interval: ReturnType<typeof setInterval> | null;
+
+  const swipeFunc = {
+    onSwipeLeft: manualNextImage,
+    onSwipeRight: manualPrevImage,
+  };
 
   function manualPrevImage() {
     if (interval !== null) clearInterval(interval);
@@ -46,13 +51,7 @@
   });
 </script>
 
-<section
-  class="carousel"
-  use:gestures={{
-    onSwipeLeft: manualNextImage,
-    onSwipeRight: manualPrevImage,
-  }}
->
+<section class="carousel" use:createSwipe={swipeFunc}>
   <div class="background" style="background-image: url({imageData[0]});"></div>
 
   <div class="carousel-content">
