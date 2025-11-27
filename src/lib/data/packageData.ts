@@ -14,7 +14,7 @@ type AdditionData = {
 export const packageData: PackageData[] = [
   {
     name: "Family",
-    imageURL: "/images/main-carousel/IMG_0005.webp",
+    imageURL: "/images/gallery/IMG_0279.webp",
     price: 75,
     details: [
       "20-25+ edited photos",
@@ -44,7 +44,7 @@ export const packageData: PackageData[] = [
   },
   {
     name: "Seniors",
-    imageURL: "/images/main-carousel/IMG_9346.webp",
+    imageURL: "/images/main-carousel/IMG_9301.webp",
     price: 75,
     details: [
       "20-25+ edited photos",
