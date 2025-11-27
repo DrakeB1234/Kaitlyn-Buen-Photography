@@ -3,10 +3,11 @@
   import FullImage from "$lib/components/FullImage.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
-  import type { PageProps } from "../$types";
+  import { galleryImages, mainCarouselImages } from "$lib/data/imageData";
 
-  const { data }: PageProps = $props();
+  const images = [...mainCarouselImages, ...galleryImages];
   let showFullImage: boolean = $state(false);
+
   let selectedImageSrc: string = $state("");
 
   function handleImgClick(src: string) {
@@ -23,9 +24,9 @@
     closeFunc={() => (showFullImage = false)}
   />
 {/if}
-<Wrapper maxWidth={1400} backgroundColor="var(--color-white)">
+<Wrapper maxWidth={1200} backgroundColor="var(--color-white)">
   <section class="masonry">
-    {#each data.images as url (url)}
+    {#each images as url, i (`${url}-${i}`)}
       <img
         src={url}
         alt=""

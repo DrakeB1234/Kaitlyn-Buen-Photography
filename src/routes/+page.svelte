@@ -6,13 +6,11 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import Reviews from "$lib/components/Reviews.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
-  import type { PageProps } from "./$types";
-
-  const { data }: PageProps = $props();
+  import { mainCarouselImages } from "$lib/data/imageData";
 </script>
 
 <Navbar />
-<Carousel imageData={data.images} />
+<Carousel imageData={mainCarouselImages} />
 <Wrapper maxWidth={1100} backgroundColor="var(--color-accent-base)">
   <About />
   <Reviews />
