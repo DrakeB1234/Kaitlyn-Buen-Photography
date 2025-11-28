@@ -1,11 +1,16 @@
 <script lang="ts">
+  import { afterNavigate } from "$app/navigation";
   import Footer from "$lib/components/Footer.svelte";
   import FullImage from "$lib/components/FullImage.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
-  import { galleryImages, mainCarouselImages } from "$lib/data/imageData";
+  import {
+    galleryImages,
+    mainCarouselImages,
+    type ImageData,
+  } from "$lib/data/imageData";
 
-  const images = [...mainCarouselImages, ...galleryImages];
+  const images: ImageData[] = [...mainCarouselImages, ...galleryImages];
   let showFullImage: boolean = $state(false);
 
   let selectedImageSrc: string = $state("");
@@ -14,6 +19,13 @@
     selectedImageSrc = src;
     showFullImage = true;
   }
+
+  afterNavigate(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  });
 </script>
 
 <Navbar />
@@ -25,14 +37,16 @@
   />
 {/if}
 <Wrapper maxWidth={1200} backgroundColor="var(--color-white)">
-  <section class="masonry">
-    {#each images as url, i (`${url}-${i}`)}
+  <section class="masonry" id="gallery">
+    {#each images as item, i (`${item.url}-${i}`)}
       <img
-        src={url}
+        src={item.url}
         alt=""
         loading="lazy"
-        onclick={() => handleImgClick(url)}
+        onclick={() => handleImgClick(item.url)}
         role="none"
+        width={item.width}
+        height={item.height}
       />
     {/each}
   </section>
@@ -49,6 +63,7 @@
 
   .masonry img {
     width: 100%;
+    height: auto;
     object-fit: cover;
     margin-bottom: var(--spacing-xsmall);
     cursor: pointer;

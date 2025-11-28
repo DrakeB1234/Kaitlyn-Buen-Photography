@@ -24,7 +24,7 @@ export const packageData: PackageData[] = [
   },
   {
     name: "Couples",
-    imageURL: "/images/main-carousel/IMG_9509.webp",
+    imageURL: "/images/gallery/IMG_0053.webp",
     price: 50,
     details: [
       "10-15+ edited photos",
@@ -44,7 +44,7 @@ export const packageData: PackageData[] = [
   },
   {
     name: "Seniors",
-    imageURL: "/images/main-carousel/IMG_9301.webp",
+    imageURL: "/images/gallery/IMG_0897.webp",
     price: 75,
     details: [
       "20-25+ edited photos",

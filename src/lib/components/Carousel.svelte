@@ -5,9 +5,10 @@
   import { cubicIn } from "svelte/easing";
   import LeftArrowIcon from "$lib/icons/LeftArrowIcon.svelte";
   import RightArrowIcon from "$lib/icons/RightArrowIcon.svelte";
+  import type { ImageData } from "$lib/data/imageData";
 
   type Props = {
-    imageData: string[];
+    imageData: ImageData[];
     intervalTimeout?: number;
   };
 
@@ -58,12 +59,14 @@
   <div class="carousel-content">
     {#key currentIndex}
       <img
-        src={imageData[currentIndex]}
+        src={imageData[currentIndex].url}
         alt={`Slide ${currentIndex + 1}`}
         class="fade-image"
         loading="lazy"
         transition:fade={{ duration: 450, easing: cubicIn }}
         draggable="false"
+        width={imageData[currentIndex].width}
+        height={imageData[currentIndex].height}
       />
     {/key}
 

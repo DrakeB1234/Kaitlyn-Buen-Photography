@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import sharp from "sharp"; // Replaces image-size
 
 // --- Configuration ---
 const subdirs = [
@@ -12,9 +13,7 @@ const outputFile = "src/lib/data/imageData.ts";
 // ---------------------
 
 /**
- * Converts a string to PascalCase (or a similar valid JavaScript constant name).
- * E.g., 'main-carousel' -> 'MainCarousel'
- * E.g., 'gallery' -> 'Gallery'
+ * Converts a string to PascalCase.
  */
 function toPascalCase(str) {
   return str
@@ -24,38 +23,73 @@ function toPascalCase(str) {
 }
 
 /**
- * Reads files from a directory, filters images, and formats the public URL.
+ * Reads files and uses Sharp to get dimensions asynchronously.
  */
-function getFiles(dir, subdirName) {
+async function getFiles(dir, subdirName) {
   if (!fs.existsSync(dir)) return [];
 
-  return fs
+  // 1. Get list of file names
+  const fileNames = fs
     .readdirSync(dir)
-    .filter((file) => /\.(jpe?g|png|gif|webp|avif)$/i.test(file))
-    .map((file) =>
-      // Use path.join to create the public URL, then replace backslashes for web paths
-      `/${path.join("images", subdirName, file).replace(/\\/g, "/")}`
-    );
+    .filter((file) => /\.(jpe?g|png|gif|webp|avif)$/i.test(file));
+
+  // 2. Process all images in parallel
+  const dataPromises = fileNames.map(async (file) => {
+    const absolutePath = path.join(dir, file);
+    const publicUrl = `/${path.join("images", subdirName, file).replace(/\\/g, "/")}`;
+
+    try {
+      // Sharp reads the metadata (robust for all WebP types)
+      const metadata = await sharp(absolutePath).metadata();
+
+      return {
+        url: publicUrl,
+        width: metadata.width,
+        height: metadata.height
+      };
+    } catch (err) {
+      console.error(`Error reading ${file}:`, err.message);
+      return null;
+    }
+  });
+
+  // 3. Wait for all files to be read and filter out failures
+  const results = await Promise.all(dataPromises);
+  return results.filter(Boolean);
 }
 
-let tsContent = `// Auto-generated — DO NOT EDIT\n`;
-let totalFiles = 0;
+// --- Main Execution ---
+(async () => {
+  console.log("Starting image processing...");
 
-for (const folder of subdirs) {
-  const fullPath = path.join(baseImagesDir, folder);
-  const files = getFiles(fullPath, folder);
-
-  // Create a descriptive constant name based on the folder name (e.g., 'main-carousel' -> 'mainCarouselImages')
-  const baseName = toPascalCase(folder);
-  const constName = `${baseName.charAt(0).toLowerCase() + baseName.slice(1)}Images`;
-
-  // Append the new const export to the content string
-  tsContent += `export const ${constName}: string[] = ${JSON.stringify(files, null, 2)};\n`;
-  totalFiles += files.length;
+  let tsContent = `// Auto-generated — DO NOT EDIT
+export interface ImageData {
+  url: string;
+  width: number;
+  height: number;
 }
+\n`;
 
-fs.writeFileSync(outputFile, tsContent);
+  let totalFiles = 0;
 
-console.log(
-  `Generated ${totalFiles} image URLs across ${subdirs.length} folders → ${outputFile}`
-);
+  for (const folder of subdirs) {
+    const fullPath = path.join(baseImagesDir, folder);
+
+    // Await the async file getting
+    const files = await getFiles(fullPath, folder);
+
+    const baseName = toPascalCase(folder);
+    const constName = `${baseName.charAt(0).toLowerCase() + baseName.slice(1)}Images`;
+
+    tsContent += `export const ${constName}: ImageData[] = ${JSON.stringify(files, null, 2)};\n`;
+    totalFiles += files.length;
+
+    console.log(`Processed ${folder}: ${files.length} images`);
+  }
+
+  fs.writeFileSync(outputFile, tsContent);
+
+  console.log(
+    `SUCCESS: Generated ${totalFiles} image objects across ${subdirs.length} folders → ${outputFile}`
+  );
+})();

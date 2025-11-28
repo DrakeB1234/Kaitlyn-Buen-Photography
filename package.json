@@ -10,7 +10,8 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"generate:images": "node scripts/generate-image-data.js",
+		"images:generate": "node scripts/generate-image-data.js",
+		"images:shuffle": "node scripts/shuffle-generated-images.js",
 		"lint": "eslint ."
 	},
 	"devDependencies": {
@@ -23,6 +24,7 @@
 		"eslint": "^9.38.0",
 		"eslint-plugin-svelte": "^3.12.4",
 		"globals": "^16.4.0",
+		"sharp": "^0.34.5",
 		"svelte": "^5.41.0",
 		"svelte-check": "^4.3.3",
 		"typescript": "^5.9.3",
