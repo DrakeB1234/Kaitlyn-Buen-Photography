@@ -4,15 +4,18 @@
   import Wrapper from "./Wrapper.svelte";
 
   type Props = {
-    imgSrc: string;
+    imgName: string;
     closeFunc: () => void;
   };
 
-  let { imgSrc, closeFunc }: Props = $props();
+  let { imgName, closeFunc }: Props = $props();
+  const bathPath = `images/full/gallery/${imgName}`;
 
   async function handleSharePressed() {
     try {
-      await navigator.clipboard.writeText(`${window.location.origin}${imgSrc}`);
+      await navigator.clipboard.writeText(
+        `${window.location.origin}${bathPath}`,
+      );
       alert("Image link copied!");
     } catch (err) {
       alert("Failed to copy image link.");
@@ -24,7 +27,7 @@
   <Wrapper backgroundColor="transparent">
     <div class="container" onclick={(e) => e.stopPropagation()} role="none">
       <div class="top-bar">
-        <h1 class="filename">{imgSrc.split("/").pop()}</h1>
+        <h1 class="filename">{imgName}</h1>
         <div class="actions">
           <button
             class="reset icon-btn"
@@ -40,7 +43,7 @@
       </div>
 
       <div class="image-wrapper">
-        <img src={imgSrc} alt={imgSrc} role="none" />
+        <img src={bathPath} alt={imgName} role="none" loading="lazy" />
       </div>
     </div>
   </Wrapper>

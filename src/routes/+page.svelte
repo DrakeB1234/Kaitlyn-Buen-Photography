@@ -4,15 +4,17 @@
   import ContactForm from "$lib/components/ContactForm.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
+  import QuickButtonLinks from "$lib/components/QuickButtonLinks.svelte";
   import Reviews from "$lib/components/Reviews.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
-  import { mainCarouselImages } from "$lib/data/imageData";
+  import { fullImagesMainCarousel } from "$lib/data/imageData";
 </script>
 
 <Navbar />
-<Carousel imageData={mainCarouselImages} />
+<Carousel imageData={fullImagesMainCarousel} />
 <Wrapper maxWidth={1100} backgroundColor="var(--color-accent-base)">
   <About />
+  <QuickButtonLinks />
   <Reviews />
 </Wrapper>
 <Wrapper backgroundColor="var(--color-primary-base)">
@@ -26,7 +28,7 @@
 
 <style>
   section.contact {
-    padding: var(--spacing-2xlarge) var(--spacing-base);
+    padding: var(--spacing-2xlarge) var(--spacing-xlarge);
     background-color: var(--color-primary-base);
   }
 </style>

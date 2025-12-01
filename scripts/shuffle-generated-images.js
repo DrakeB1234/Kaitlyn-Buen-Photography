@@ -27,30 +27,22 @@ function shuffleArray(array) {
   console.log(`Reading ${targetFile}...`);
   let content = fs.readFileSync(filePath, "utf-8");
 
-  // Regex breakdown:
-  // 1. (export const \w+: ImageData\[\] = )  -> Matches the start: "export const name: ImageData[] = "
-  // 2. (\[[\s\S]*?\])                        -> Matches the JSON array (including newlines) non-greedily
-  // 3. (;)                                   -> Matches the closing semicolon
   const regex = /(export const \w+: ImageData\[\] = )(\[[\s\S]*?\])(;)/g;
 
   let modifyCount = 0;
 
-  // Replace every occurrence found by the Regex
   const newContent = content.replace(regex, (match, prefix, jsonArray, suffix) => {
     try {
-      // Parse the array string into a real JS object
       const array = JSON.parse(jsonArray);
 
-      // Shuffle it
       shuffleArray(array);
 
       modifyCount++;
 
-      // Return the reconstructed string
       return `${prefix}${JSON.stringify(array, null, 2)}${suffix}`;
     } catch (e) {
       console.error("Failed to parse or shuffle an array section. Skipping.");
-      return match; // Return original if error
+      return match;
     }
   });
 

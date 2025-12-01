@@ -3,6 +3,7 @@ type PackageData = {
   imageURL: string;
   price: number;
   details: string[];
+  message?: string;
 }
 
 type AdditionData = {
@@ -14,44 +15,44 @@ type AdditionData = {
 export const packageData: PackageData[] = [
   {
     name: "Family",
-    imageURL: "/images/gallery/IMG_0279.webp",
+    imageURL: "/images/full/gallery/IMG_0279.webp",
     price: 75,
     details: [
       "20-25+ edited photos",
       "1 hour photoshoot",
-      "Shot at pre-selected locations, contact for more information",
-    ]
+    ],
+    message: "Hello Kaitlyn! I am interested in the Family package listed on your site."
   },
   {
     name: "Couples",
-    imageURL: "/images/gallery/IMG_0053.webp",
+    imageURL: "/images/full/gallery/IMG_0053.webp",
     price: 50,
     details: [
       "10-15+ edited photos",
       "45 minute photoshoot",
-      "Shot at pre-selected locations, contact for more information",
-    ]
+    ],
+    message: "Hello Kaitlyn! I am interested in the Couples package listed on your site."
   },
   {
     name: "Children",
-    imageURL: "/images/main-carousel/IMG_9719.webp",
+    imageURL: "/images/full/main-carousel/IMG_9719.webp",
     price: 50,
     details: [
       "10-15+ edited photos",
       "45 minute photoshoot",
-      "Shot at pre-selected locations, contact for more information",
-    ]
+    ],
+    message: "Hello Kaitlyn! I am interested in the Children package listed on your site."
   },
   {
     name: "Seniors",
-    imageURL: "/images/gallery/IMG_0897.webp",
+    imageURL: "/images/full/gallery/IMG_0897.webp",
     price: 75,
     details: [
       "20-25+ edited photos",
       "1 hour photoshoot",
       "1 outfit change",
-      "Shot at pre-selected locations, contact for more information",
-    ]
+    ],
+    message: "Hello Kaitlyn! I am interested in the Seniors package listed on your site."
   },
 ];
 

@@ -4,23 +4,18 @@ import sharp from "sharp"; // Replaces image-size
 
 // --- Configuration ---
 const subdirs = [
-  "main-carousel",
-  "gallery"
+  {
+    path: "full/main-carousel",
+    outputConstName: "fullImagesMainCarousel",
+  },
+  {
+    path: "thumbnails/gallery",
+    outputConstName: "thumbnailsImagesGallery",
+  },
 ];
 
 const baseImagesDir = "static/images";
 const outputFile = "src/lib/data/imageData.ts";
-// ---------------------
-
-/**
- * Converts a string to PascalCase.
- */
-function toPascalCase(str) {
-  return str
-    .split('-')
-    .map(segment => segment.charAt(0).toUpperCase() + segment.slice(1))
-    .join('');
-}
 
 /**
  * Reads files and uses Sharp to get dimensions asynchronously.
@@ -72,19 +67,16 @@ export interface ImageData {
 
   let totalFiles = 0;
 
-  for (const folder of subdirs) {
-    const fullPath = path.join(baseImagesDir, folder);
+  for (const item of subdirs) {
+    const fullPath = path.join(baseImagesDir, item.path);
 
     // Await the async file getting
-    const files = await getFiles(fullPath, folder);
+    const files = await getFiles(fullPath, item.path);
 
-    const baseName = toPascalCase(folder);
-    const constName = `${baseName.charAt(0).toLowerCase() + baseName.slice(1)}Images`;
-
-    tsContent += `export const ${constName}: ImageData[] = ${JSON.stringify(files, null, 2)};\n`;
+    tsContent += `export const ${item.outputConstName}: ImageData[] = ${JSON.stringify(files, null, 2)};\n`;
     totalFiles += files.length;
 
-    console.log(`Processed ${folder}: ${files.length} images`);
+    console.log(`Processed ${item.path}: ${files.length} images`);
   }
 
   fs.writeFileSync(outputFile, tsContent);

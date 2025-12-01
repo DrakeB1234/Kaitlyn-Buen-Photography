@@ -129,6 +129,7 @@ body {
 }
 
 a {
+  font-size: var(--font-size-large);
   text-decoration: none;
   color: inherit;
 }
@@ -184,6 +185,21 @@ a.button-primary:hover {
   background-color: var(--color-primary-light-hover);
 }
 
+a.button-secondary {
+  padding: var(--spacing-xsmall) var(--spacing-base);
+  border-radius: var(--radius-base);
+
+  border: 1px solid var(--color-primary-base);
+}
+
+a.icon {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xsmall);
+  color: var(--color-primary-light);
+}
+
+
 /* Text Element Classes */
 .heading-primary {
   font-size: var(--font-size-2xlarge);
@@ -197,6 +213,12 @@ a.button-primary:hover {
   line-height: 1.4;
 }
 
+.heading-small {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+}
+
 .body-large {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-base);
@@ -204,7 +226,7 @@ a.button-primary:hover {
 }
 
 .body-regular {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-large);
   font-weight: var(--font-weight-base);
   line-height: 1.2;
 }

@@ -1,6 +1,6 @@
 <section id="about" class="about">
   <div class="content">
-    <img src="/picofme.webp" alt="" />
+    <img src="/picofme.webp" alt="" loading="lazy" />
     <div class="text">
       <p class="heading-primary">A Little About Myself...</p>
       <p class="body-regular">

@@ -38,14 +38,6 @@
   function nextImage() {
     currentIndex = (currentIndex + 1) % imageData.length;
   }
-
-  onMount(() => {
-    interval = setInterval(nextImage, intervalTimeout);
-  });
-
-  onDestroy(() => {
-    if (interval !== null) clearInterval(interval);
-  });
 </script>
 
 <section
@@ -54,7 +46,10 @@
   onswipeleft={manualNextImage}
   onswiperight={manualPrevImage}
 >
-  <div class="background" style="background-image: url({imageData[0]});"></div>
+  <div
+    class="background"
+    style="background-image: url({imageData[0].url});"
+  ></div>
 
   <div class="carousel-content">
     {#key currentIndex}

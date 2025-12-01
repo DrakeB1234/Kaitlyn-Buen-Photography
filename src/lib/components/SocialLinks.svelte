@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { emailLink, facebookLink, messengerLink } from "$lib/helpers/helpers";
   import EmailIcon from "$lib/icons/EmailIcon.svelte";
   import FacebookIcon from "$lib/icons/FacebookIcon.svelte";
   import MessengerIcon from "$lib/icons/MessengerIcon.svelte";
@@ -13,19 +14,15 @@
 <div class="social-links">
   <ul role="list" style="justify-content: {justifyContent};">
     <li>
-      <a target="_blank" href="/"
+      <a target="_blank" href="mailto:{emailLink}"
         ><EmailIcon {size} color="var(--color-white)" /></a
       >
     </li>
     <li>
-      <a
-        target="_blank"
-        href="https://www.facebook.com/profile.php?id=61582624177580"
-        ><FacebookIcon {size} {color} /></a
-      >
+      <a target="_blank" href={facebookLink}><FacebookIcon {size} {color} /></a>
     </li>
     <li>
-      <a target="_blank" href="https://www.messenger.com/t/61582624177580"
+      <a target="_blank" href={messengerLink}
         ><MessengerIcon {size} {color} /></a
       >
     </li>

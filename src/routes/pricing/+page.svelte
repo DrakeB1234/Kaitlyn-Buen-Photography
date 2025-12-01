@@ -1,11 +1,16 @@
-<script>
+<script lang="ts">
   import Footer from "$lib/components/Footer.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import { packageAdditionsData, packageData } from "$lib/data/packageData";
+  import { getMessengerLinkWithPrefilledMessage } from "$lib/helpers/helpers";
+  import ExternalLink from "$lib/icons/ExternalLink.svelte";
 
   const data = packageData;
   const additionsData = packageAdditionsData;
+
+  const messengerLink = (ref: string, message?: string) =>
+    getMessengerLinkWithPrefilledMessage(ref, message);
 </script>
 
 <Navbar />
@@ -13,7 +18,7 @@
   <main>
     {#each data as data, i (i)}
       <div class="package-image">
-        <img src={data.imageURL} alt="" />
+        <img src={data.imageURL} alt="" loading="lazy" />
         <div class="package-text">
           <p class="package-text-large">{data.name}</p>
         </div>
@@ -23,6 +28,14 @@
         {#each data.details as detail, i (i)}
           <p class="body-large">{detail}</p>
         {/each}
+        <a
+          class="icon"
+          href={messengerLink(`${data.name} Package`, data.message)}
+          target="_blank"
+          >Interested? Contact me! <ExternalLink
+            color="var(--color-primary-light)"
+          /></a
+        >
       </div>
     {/each}
 
@@ -40,7 +53,7 @@
             {item.detail}
           </p>
         {/each}
-        <p class="body-large title">Fees (contact me for more info)</p>
+        <p class="body-large title">Fees</p>
         {#each additionsData.fees as item, i (i)}
           <p class="body-large">
             <span
@@ -51,6 +64,11 @@
             {item.detail}
           </p>
         {/each}
+        <a class="icon" href={messengerLink(`Additions Fees`)} target="_blank"
+          >Questions? Contact me! <ExternalLink
+            color="var(--color-primary-light)"
+          /></a
+        >
       </div>
     </div>
   </main>

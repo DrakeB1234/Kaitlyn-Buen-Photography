@@ -4,19 +4,18 @@
   import FullImage from "$lib/components/FullImage.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
-  import {
-    galleryImages,
-    mainCarouselImages,
-    type ImageData,
-  } from "$lib/data/imageData";
+  import { thumbnailsImagesGallery } from "$lib/data/imageData";
 
-  const images: ImageData[] = [...mainCarouselImages, ...galleryImages];
   let showFullImage: boolean = $state(false);
 
-  let selectedImageSrc: string = $state("");
+  let selectedImageName: string = $state("");
 
   function handleImgClick(src: string) {
-    selectedImageSrc = src;
+    const parts = src.split("/");
+    const imgName = parts.find((e) => e.includes(".webp"));
+    console.log(imgName);
+    if (!imgName) return;
+    selectedImageName = imgName;
     showFullImage = true;
   }
 
@@ -32,13 +31,13 @@
 
 {#if showFullImage}
   <FullImage
-    imgSrc={selectedImageSrc}
+    imgName={selectedImageName}
     closeFunc={() => (showFullImage = false)}
   />
 {/if}
 <Wrapper maxWidth={1200} backgroundColor="var(--color-white)">
   <section class="masonry" id="gallery">
-    {#each images as item, i (`${item.url}-${i}`)}
+    {#each thumbnailsImagesGallery as item, i (`${item.url}-${i}`)}
       <img
         src={item.url}
         alt=""
