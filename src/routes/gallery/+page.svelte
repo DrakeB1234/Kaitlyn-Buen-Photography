@@ -27,6 +27,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>Gallery | Kaitlyn Buen Photography</title>
+</svelte:head>
+
 <Navbar />
 
 {#if showFullImage}

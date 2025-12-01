@@ -64,6 +64,7 @@
   .container {
     display: flex;
     flex-direction: column;
+    width: 100%;
     max-width: 96dvw;
     max-height: 96dvh;
     width: fit-content;

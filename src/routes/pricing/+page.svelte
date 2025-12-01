@@ -13,6 +13,10 @@
     getMessengerLinkWithPrefilledMessage(ref, message);
 </script>
 
+<svelte:head>
+  <title>Pricing | Kaitlyn Buen Photography</title>
+</svelte:head>
+
 <Navbar />
 <Wrapper backgroundColor="var(--color-white)" maxWidth={700}>
   <main>

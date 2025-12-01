@@ -6,6 +6,10 @@
   import Wrapper from "$lib/components/Wrapper.svelte";
 </script>
 
+<svelte:head>
+  <title>About Me | Kaitlyn Buen Photography</title>
+</svelte:head>
+
 <Navbar />
 <Wrapper backgroundColor="var(--color-accent-base)">
   <About />

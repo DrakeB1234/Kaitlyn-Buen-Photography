@@ -10,6 +10,10 @@
   import { fullImagesMainCarousel } from "$lib/data/imageData";
 </script>
 
+<svelte:head>
+  <title>Kaitlyn Buen Photography | Springfield, MO</title>
+</svelte:head>
+
 <Navbar />
 <Carousel imageData={fullImagesMainCarousel} />
 <Wrapper maxWidth={1100} backgroundColor="var(--color-accent-base)">

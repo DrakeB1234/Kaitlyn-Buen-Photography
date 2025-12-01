@@ -6,6 +6,10 @@
   import Wrapper from "$lib/components/Wrapper.svelte";
 </script>
 
+<svelte:head>
+  <title>Contact Me | Kaitlyn Buen Photography</title>
+</svelte:head>
+
 <Navbar />
 
 <Wrapper maxWidth={600} backgroundColor="var(--color-white)">
