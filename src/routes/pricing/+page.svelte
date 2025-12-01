@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-  <title>Pricing | Kaitlyn Buen Photography</title>
+  <title>Pricing | Kaitlyn Buen Photography Springfield, MO</title>
 </svelte:head>
 
 <Navbar />

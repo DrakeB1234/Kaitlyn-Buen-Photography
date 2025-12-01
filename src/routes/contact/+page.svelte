@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>Contact Me | Kaitlyn Buen Photography</title>
+  <title>Contact Me | Kaitlyn Buen Photography Springfield, MO</title>
 </svelte:head>
 
 <Navbar />

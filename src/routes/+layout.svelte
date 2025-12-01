@@ -1,5 +1,4 @@
 <script lang="ts">
-	import favicon from "$lib/assets/favicon.svg";
 	import { injectAnalytics } from "@vercel/analytics/sveltekit";
 	import { dev } from "$app/environment";
 	import "../app.css";
@@ -12,8 +11,8 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
-	<title>Kaitlyn Buen Photography | Springfield, MO</title>
+	<link rel="icon" href="/favicon.ico" />
+	<title>Kaitlyn Buen Photography | Springfield, MO Photographer</title>
 	<meta
 		name="description"
 		content="Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."

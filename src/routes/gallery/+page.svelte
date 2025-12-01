@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-  <title>Gallery | Kaitlyn Buen Photography</title>
+  <title>Gallery | Kaitlyn Buen Photography Springfield, MO</title>
 </svelte:head>
 
 <Navbar />
