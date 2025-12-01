@@ -60,6 +60,7 @@ export const packageAdditionsData = {
     { price: 25, detail: "Add 10 edited photos" },
   ] as AdditionData[],
   fees: [
+    { price: 40, detail: "Studio 30 min booking" },
     { price: 20, detail: "Travel fee" },
     { price: 15, detail: "Non-refundable deposit that goes towards the full package price to hold your booking." },
   ] as AdditionData[]

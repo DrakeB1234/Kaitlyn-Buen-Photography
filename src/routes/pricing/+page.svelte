@@ -11,10 +11,6 @@
 <Navbar />
 <Wrapper backgroundColor="var(--color-white)" maxWidth={700}>
   <main>
-    <p class="body disclaimer">
-      *All packages requires a <span>$15 non-refundable</span> deposit that goes
-      towards the full-price of the package.
-    </p>
     {#each data as data, i (i)}
       <div class="package-image">
         <img src={data.imageURL} alt="" />
@@ -65,9 +61,6 @@
 <style>
   main {
     padding: var(--spacing-base);
-  }
-  p.disclaimer {
-    margin-bottom: var(--spacing-small);
   }
   .package-image {
     position: relative;
