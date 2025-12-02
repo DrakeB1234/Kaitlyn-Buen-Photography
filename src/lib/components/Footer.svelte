@@ -6,6 +6,7 @@
 
 <Wrapper backgroundColor="var(--color-primary-dark)">
   <section class="footer">
+    <h1 class="body-large">Kaitlyn Buen Photography</h1>
     <SocialLinks size={30} />
     <div class="bottom">
       <div class="links">
@@ -32,5 +33,9 @@
     & .bottom > p {
       margin-top: var(--spacing-xlarge);
     }
+  }
+  .footer > h1 {
+    text-align: center;
+    padding-bottom: var(--spacing-large);
   }
 </style>

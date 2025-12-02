@@ -1,5 +1,5 @@
 export const emailLink = "dkbuentello@gmail.com";
-export const facebookLink = "https://www.messenger.com/t/61582624177580";
+export const facebookLink = "https://www.facebook.com/profile.php?id=61582624177580";
 export const messengerLink = "https://www.messenger.com/t/61582624177580";
 
 export function shuffle<T>(arr: T[]): T[] {

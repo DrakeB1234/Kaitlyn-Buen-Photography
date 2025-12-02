@@ -24,7 +24,7 @@
       <div class="package-image">
         <img src={data.imageURL} alt="" loading="lazy" />
         <div class="package-text">
-          <p class="package-text-large">{data.name}</p>
+          <h2 class="package-text-large">{data.name}</h2>
         </div>
       </div>
       <div class="package-details">
@@ -44,7 +44,7 @@
     {/each}
 
     <div class="package-additions">
-      <p class="heading-secondary">Package Additions / Fees</p>
+      <h2 class="heading-secondary">Package Additions / Fees</h2>
       <div class="package-details">
         <p class="body-large title">Additions</p>
         {#each additionsData.additions as item, i (i)}
@@ -93,12 +93,6 @@
       align-items: center;
       position: absolute;
       inset: 0;
-
-      & p {
-        background-color: rgba(0, 0, 0, 0.4);
-        box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.5);
-        color: var(--color-white);
-      }
     }
 
     & img {

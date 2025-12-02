@@ -2,7 +2,7 @@
   <div class="content">
     <img src="/picofme.webp" alt="" loading="lazy" />
     <div class="text">
-      <p class="heading-primary">A Little About Myself...</p>
+      <h2 class="heading-primary">A Little About Myself...</h2>
       <p class="body-regular">
         Hi there! I'm Kaitlyn, and I'm a photographer based in <span
           style="font-weight: var(--font-weight-bold);">Springfield, MO</span
@@ -35,6 +35,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xlarge);
     padding: var(--spacing-2xlarge) var(--spacing-xlarge);
+    padding-top: var(--spacing-xlarge);
     grid-template-areas: "image text";
 
     & > img {
@@ -46,10 +47,6 @@
     }
 
     & > div.text p.body-regular:not(:last-child) {
-      margin-bottom: var(--spacing-base);
-    }
-
-    & p.heading-primary {
       margin-bottom: var(--spacing-base);
     }
     & p.body-regular {
