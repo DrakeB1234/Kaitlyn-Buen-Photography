@@ -13,7 +13,6 @@
   function handleImgClick(src: string) {
     const parts = src.split("/");
     const imgName = parts.find((e) => e.includes(".webp"));
-    console.log(imgName);
     if (!imgName) return;
     selectedImageName = imgName;
     showFullImage = true;

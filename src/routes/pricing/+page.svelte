@@ -95,6 +95,11 @@
       inset: 0;
     }
 
+    & h2 {
+      background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.4);
+    }
+
     & img {
       width: 100%;
       object-fit: cover;

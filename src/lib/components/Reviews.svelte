@@ -28,7 +28,7 @@
 
 <style>
   section.reviews {
-    padding: var(--spacing-2xlarge);
+    padding: var(--spacing-2xlarge) var(--spacing-base);
   }
   .review-container {
     display: grid;
@@ -37,6 +37,7 @@
     place-items: center;
     align-items: stretch;
     margin-top: var(--spacing-2xlarge);
+    overflow: hidden;
   }
   .review {
     text-align: center;

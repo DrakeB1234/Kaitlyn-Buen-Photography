@@ -18,11 +18,11 @@
     : 'unset'};"
 >
   <label for="subject" style="color: {labelColor}">Subject</label>
-  <input name="subject" placeholder="Subject" bind:value={subject} />
+  <input id="subject" placeholder="Subject" bind:value={subject} />
 
   <label for="message" style="color: {labelColor}">Message</label>
   <textarea
-    name="message"
+    id="message"
     placeholder="Hello Kaitlyn! I am interested in booking a appointment with you for a couples shoot!"
     bind:value={message}
   ></textarea>

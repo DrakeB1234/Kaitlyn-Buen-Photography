@@ -1,5 +1,4 @@
 <script lang="ts">
-  import LogoIcon from "$lib/icons/LogoIcon.svelte";
   import Links from "./Links.svelte";
   import Wrapper from "./Wrapper.svelte";
   import MenuIcon from "$lib/icons/MenuIcon.svelte";
@@ -15,7 +14,7 @@
 {#if !hideLogoHeader}
   <div class="logo">
     <a href="/">
-      <LogoIcon color="var(--color-white)" />
+      <img src="/logo.svg" alt="logo" loading="lazy" width="200" height="200" />
     </a>
   </div>
 {/if}
@@ -57,6 +56,10 @@
     justify-content: center;
     padding: var(--spacing-base);
     background-color: var(--color-primary-base);
+  }
+  div.logo img {
+    max-width: 140px;
+    height: auto;
   }
   .navbar-desktop,
   .navbar-mobile {
@@ -102,6 +105,9 @@
   }
 
   @media (min-width: 40em) {
+    div.logo img {
+      max-width: 170px;
+    }
     .navbar-mobile {
       display: none;
     }
