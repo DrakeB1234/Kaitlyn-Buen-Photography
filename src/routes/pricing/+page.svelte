@@ -22,7 +22,13 @@
   <main>
     {#each data as data, i (i)}
       <div class="package-image">
-        <img src={data.imageURL} alt="" loading="lazy" />
+        <img
+          src={data.imageURL}
+          alt="package"
+          loading="lazy"
+          width="668"
+          height="350"
+        />
         <div class="package-text">
           <h2 class="package-text-large">{data.name}</h2>
         </div>
@@ -102,9 +108,10 @@
 
     & img {
       width: 100%;
+      height: auto;
       object-fit: cover;
       object-position: center 40%;
-      max-height: 300px;
+      max-height: 350px;
     }
   }
   .package-details {

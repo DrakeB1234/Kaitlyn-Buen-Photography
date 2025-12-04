@@ -1,6 +1,13 @@
 <section id="about" class="about">
   <div class="content">
-    <img src="/picofme.webp" alt="" loading="lazy" />
+    <img
+      class="about-me-image"
+      src="/picofme.webp"
+      alt="picofme"
+      loading="lazy"
+      width="500"
+      height="500"
+    />
     <div class="text">
       <h2 class="heading-primary">A Little About Myself...</h2>
       <p class="body-regular">
@@ -29,6 +36,11 @@
 <style>
   section.about {
     background-color: var(--color-accent-base);
+  }
+  .about-me-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
   }
   section.about div.content {
     display: grid;

@@ -51,7 +51,7 @@ svg {
   src: url('/fonts/crimson-pro-v28-latin-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -59,7 +59,7 @@ svg {
   src: url('/fonts/crimson-pro-v28-latin-500.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -67,7 +67,7 @@ svg {
   src: url('/fonts/crimson-pro-v28-latin-600.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 :root {
