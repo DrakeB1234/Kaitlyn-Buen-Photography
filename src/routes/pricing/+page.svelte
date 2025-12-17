@@ -23,9 +23,9 @@
     {#each data as data, i (i)}
       <div class="package-image">
         <img
+          loading="lazy"
           src={data.imageURL}
           alt="package"
-          loading="lazy"
           width="668"
           height="350"
         />

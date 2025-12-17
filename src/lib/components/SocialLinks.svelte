@@ -1,7 +1,13 @@
 <script lang="ts">
-  import { emailLink, facebookLink, messengerLink } from "$lib/helpers/helpers";
+  import {
+    emailLink,
+    facebookLink,
+    instagramLink,
+    messengerLink,
+  } from "$lib/helpers/helpers";
   import EmailIcon from "$lib/icons/EmailIcon.svelte";
   import FacebookIcon from "$lib/icons/FacebookIcon.svelte";
+  import InstagramIcon from "$lib/icons/InstagramIcon.svelte";
   import MessengerIcon from "$lib/icons/MessengerIcon.svelte";
 
   const {
@@ -24,6 +30,11 @@
     <li>
       <a target="_blank" href={messengerLink}
         ><MessengerIcon {size} {color} /></a
+      >
+    </li>
+    <li>
+      <a target="_blank" href={instagramLink}
+        ><InstagramIcon {size} {color} /></a
       >
     </li>
   </ul>

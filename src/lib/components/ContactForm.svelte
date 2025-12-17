@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { emailLink } from "$lib/helpers/helpers";
   import SendIcon from "$lib/icons/SendIcon.svelte";
 
   const {
@@ -7,7 +8,7 @@
     maxWidth = 0,
   }: { labelColor?: string; center?: boolean; maxWidth?: number } = $props();
 
-  const emailto: string = "dkbuentello@gmail.com";
+  const emailto: string = emailLink;
   let subject: string = $state("Photography Services");
   let message: string = $state("");
 </script>

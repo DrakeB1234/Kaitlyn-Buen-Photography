@@ -4,6 +4,9 @@
 </section>
 
 <style>
+  a {
+    padding-block: var(--spacing-small);
+  }
   .quick-links {
     display: flex;
     flex-wrap: wrap;
