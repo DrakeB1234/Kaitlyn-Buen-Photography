@@ -12,7 +12,9 @@
 
 <Navbar />
 <Wrapper backgroundColor="var(--color-accent-base)">
-  <About />
-  <Reviews />
+  <main>
+    <About />
+    <Reviews />
+  </main>
 </Wrapper>
 <Footer />

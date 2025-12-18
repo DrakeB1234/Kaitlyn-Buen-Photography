@@ -38,21 +38,23 @@
     closeFunc={() => (showFullImage = false)}
   />
 {/if}
-<Wrapper maxWidth={1200} backgroundColor="var(--color-white)">
-  <section class="masonry" id="gallery">
-    {#each thumbnailsImagesGallery as item, i (i)}
-      <img
-        loading="lazy"
-        src={item.url}
-        alt=""
-        onclick={() => handleImgClick(item.url)}
-        role="none"
-        width={item.width}
-        height={item.height}
-      />
-    {/each}
-  </section>
-</Wrapper>
+<main>
+  <Wrapper maxWidth={1200} backgroundColor="var(--color-white)">
+    <section class="masonry" id="gallery">
+      {#each thumbnailsImagesGallery as item, i (i)}
+        <img
+          loading="lazy"
+          src={item.url}
+          alt=""
+          onclick={() => handleImgClick(item.url)}
+          role="none"
+          width={item.width}
+          height={item.height}
+        />
+      {/each}
+    </section>
+  </Wrapper>
+</main>
 <Footer />
 
 <style>
