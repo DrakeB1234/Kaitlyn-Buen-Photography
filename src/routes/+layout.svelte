@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href="/favicon.ico" />
+	<link rel="icon" href="/favicon.svg" />
 	<title>Kaitlyn Buen Photography | Springfield, MO Photographer</title>
 	<meta
 		name="description"

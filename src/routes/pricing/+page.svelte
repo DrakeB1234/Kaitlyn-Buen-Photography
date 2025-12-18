@@ -3,14 +3,11 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import { packageAdditionsData, packageData } from "$lib/data/packageData";
-  import { getMessengerLinkWithPrefilledMessage } from "$lib/helpers/helpers";
+  import { messengerLink } from "$lib/helpers/helpers";
   import ExternalLink from "$lib/icons/ExternalLink.svelte";
 
   const data = packageData;
   const additionsData = packageAdditionsData;
-
-  const messengerLink = (ref: string, message?: string) =>
-    getMessengerLinkWithPrefilledMessage(ref, message);
 </script>
 
 <svelte:head>
@@ -34,14 +31,14 @@
         </div>
       </div>
       <div class="package-details">
-        <p class="body-large">Starting at <span>${data.price}</span></p>
-        {#each data.details as detail, i (i)}
-          <p class="body-large">{detail}</p>
-        {/each}
-        <a
-          class="icon"
-          href={messengerLink(`${data.name} Package`, data.message)}
-          target="_blank"
+        <h2 class="body-large">Starting at <span>${data.price}</span></h2>
+        <hr />
+        <div class="data">
+          {#each data.details as detail, i (i)}
+            <p class="body-large">{detail}</p>
+          {/each}
+        </div>
+        <a class="icon" href={messengerLink} target="_blank"
           >Interested? Contact me! <ExternalLink
             color="var(--color-primary-light)"
           /></a
@@ -49,10 +46,10 @@
       </div>
     {/each}
 
-    <div class="package-additions">
-      <h2 class="heading-secondary">Package Additions / Fees</h2>
-      <div class="package-details">
-        <p class="body-large title">Additions</p>
+    <h2 class="heading-secondary">Package Additions / Fees</h2>
+    <div class="package-details additions">
+      <p class="body-large title">Additions</p>
+      <div class="data">
         {#each additionsData.additions as item, i (i)}
           <p class="body-large">
             <span
@@ -63,7 +60,10 @@
             {item.detail}
           </p>
         {/each}
-        <p class="body-large title">Fees</p>
+      </div>
+      <hr />
+      <p class="body-large title">Fees</p>
+      <div class="data">
         {#each additionsData.fees as item, i (i)}
           <p class="body-large">
             <span
@@ -74,12 +74,12 @@
             {item.detail}
           </p>
         {/each}
-        <a class="icon" href={messengerLink(`Additions Fees`)} target="_blank"
-          >Questions? Contact me! <ExternalLink
-            color="var(--color-primary-light)"
-          /></a
-        >
       </div>
+      <a class="icon" href={messengerLink} target="_blank"
+        >Questions? Contact me! <ExternalLink
+          color="var(--color-primary-light)"
+        /></a
+      >
     </div>
   </main>
 </Wrapper>
@@ -115,19 +115,39 @@
     }
   }
   .package-details {
-    margin-top: var(--spacing-xsmall);
     margin-bottom: var(--spacing-xlarge);
-    padding: var(--spacing-large) var(--spacing-base);
+    padding: var(--spacing-xlarge) var(--spacing-base);
     border: 4px double black;
+    border-top: 0;
+  }
+  .package-details > h2 {
+    margin-bottom: var(--spacing-large);
+  }
+  .package-details > .data {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+    padding-block: var(--spacing-large);
+  }
 
-    & p:not(:last-child) {
-      margin-bottom: var(--spacing-base);
-    }
+  .package-details.additions {
+    border: 4px double black;
   }
-  .package-details > p.title:not(:first-child) {
-    margin-top: var(--spacing-xlarge);
+  .package-details.additions > p.title {
+    font-weight: var(--font-weight-bold);
   }
+  .package-details.additions > p.title:nth-of-type(2) {
+    margin-top: var(--spacing-large);
+  }
+  .package-details.additions > div.data {
+    padding-top: var(--spacing-base);
+  }
+
   span {
     font-weight: var(--font-weight-bold);
+  }
+  a.icon {
+    width: fit-content;
+    margin-top: var(--spacing-small);
   }
 </style>

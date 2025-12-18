@@ -11,9 +11,3 @@ export function shuffle<T>(arr: T[]): T[] {
   }
   return array;
 }
-
-export function getMessengerLinkWithPrefilledMessage(ref: string, message?: string): string {
-  let newLink = messengerLink + `?ref=${ref}`;
-  if (message) newLink += `&text=${message}`;
-  return newLink;
-}

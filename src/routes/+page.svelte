@@ -15,20 +15,22 @@
 </svelte:head>
 
 <Navbar />
-<Carousel imageData={fullImagesMainCarousel} />
-<Wrapper maxWidth={1100} backgroundColor="var(--color-accent-base)">
-  <About />
-  <QuickButtonLinks />
-  <Reviews />
-</Wrapper>
-<Wrapper backgroundColor="var(--color-primary-base)">
-  <section class="contact">
-    <ContactForm maxWidth={450} />
-  </section>
-</Wrapper>
-<Wrapper backgroundColor="var(--color-primary-dark)">
-  <Footer />
-</Wrapper>
+<main>
+  <Carousel imageData={fullImagesMainCarousel} />
+  <Wrapper maxWidth={1100} backgroundColor="var(--color-accent-base)">
+    <About />
+    <QuickButtonLinks />
+    <Reviews />
+  </Wrapper>
+  <Wrapper backgroundColor="var(--color-primary-base)">
+    <section class="contact">
+      <ContactForm maxWidth={450} />
+    </section>
+  </Wrapper>
+  <Wrapper backgroundColor="var(--color-primary-dark)">
+    <Footer />
+  </Wrapper>
+</main>
 
 <style>
   section.contact {

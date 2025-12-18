@@ -14,6 +14,17 @@ type AdditionData = {
 
 export const packageData: PackageData[] = [
   {
+    name: "In Studio",
+    imageURL: "/images/full/gallery/IMG_1216.webp",
+    price: 100,
+    details: [
+      "20-25+ edited photos",
+      "30 minute photoshoot",
+      "$40 booking deposit",
+    ],
+    message: "Hello Kaitlyn! I am interested in the Family package listed on your site."
+  },
+  {
     name: "Family",
     imageURL: "/images/full/gallery/IMG_0279.webp",
     price: 75,
@@ -28,7 +39,7 @@ export const packageData: PackageData[] = [
     imageURL: "/images/full/gallery/IMG_0053.webp",
     price: 50,
     details: [
-      "10-15+ edited photos",
+      "15-20+ edited photos",
       "45 minute photoshoot",
     ],
     message: "Hello Kaitlyn! I am interested in the Couples package listed on your site."
@@ -38,7 +49,7 @@ export const packageData: PackageData[] = [
     imageURL: "/images/full/main-carousel/IMG_9719.webp",
     price: 50,
     details: [
-      "10-15+ edited photos",
+      "15-20+ edited photos",
       "45 minute photoshoot",
     ],
     message: "Hello Kaitlyn! I am interested in the Children package listed on your site."
