@@ -11,22 +11,24 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href="/favicon.svg" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<title>Kaitlyn Buen Photography | Springfield, MO Photographer</title>
 	<meta
 		name="description"
 		content="Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."
 	/>
 
-	<!-- SEO -->
+ <meta property="og:type" content="website" />
 	<meta
-		property="og:title"
-		content="Kaitlyn Buen Photography | Springfield, MO Photographer"
+		property="og:title" content="Kaitlyn Buen Photography | Springfield, MO Photographer"
 	/>
 	<meta
 		property="og:description"
 		content="Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."
 	/>
+ <meta property="og:url"  content="https://kaitlynbuenphotography.vercel  .app/" />
+ <meta property="og:image"  content="https://kaitlynbuenphotography.vercel.app/images/full/gallery/IMG_0386-2.webp" />
+
 
 	{@html `<script type="application/ld+json">\
 		{\
