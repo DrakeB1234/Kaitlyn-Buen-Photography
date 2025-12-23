@@ -18,17 +18,23 @@
 		content="Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."
 	/>
 
- <meta property="og:type" content="website" />
+	<meta property="og:type" content="website" />
 	<meta
-		property="og:title" content="Kaitlyn Buen Photography | Springfield, MO Photographer"
+		property="og:title"
+		content="Kaitlyn Buen Photography | Springfield, MO Photographer"
 	/>
 	<meta
 		property="og:description"
 		content="Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."
 	/>
- <meta property="og:url"  content="https://kaitlynbuenphotography.vercel  .app/" />
- <meta property="og:image"  content="https://kaitlynbuenphotography.vercel.app/images/full/gallery/IMG_0386-2.webp" />
-
+	<meta
+		property="og:url"
+		content="https://kaitlynbuenphotography.vercel.app/"
+	/>
+	<meta
+		property="og:image"
+		content="https://kaitlynbuenphotography.vercel.app/images/full/gallery/IMG_0386-2.webp"
+	/>
 
 	{@html `<script type="application/ld+json">\
 		{\
