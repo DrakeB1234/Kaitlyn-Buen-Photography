@@ -1,10 +1,10 @@
 <script lang="ts">
   import Footer from "$lib/components/Footer.svelte";
+  import Icon from "$lib/components/Icon.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import { packageAdditionsData, packageData } from "$lib/data/packageData";
   import { messengerLink } from "$lib/helpers/helpers";
-  import ExternalLink from "$lib/icons/ExternalLink.svelte";
 
   const data = packageData;
   const additionsData = packageAdditionsData;
@@ -39,7 +39,9 @@
           {/each}
         </div>
         <a class="icon" href={messengerLink} target="_blank"
-          >Interested? Contact me! <ExternalLink
+          >Interested? Contact me! <Icon
+            size={20}
+            name="material-link"
             color="var(--color-primary-light)"
           /></a
         >
@@ -76,7 +78,9 @@
         {/each}
       </div>
       <a class="icon" href={messengerLink} target="_blank"
-        >Questions? Contact me! <ExternalLink
+        >Questions? Contact me! <Icon
+          size={20}
+          name="material-link"
           color="var(--color-primary-light)"
         /></a
       >

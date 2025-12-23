@@ -1,8 +1,7 @@
 <script lang="ts">
   import Links from "./Links.svelte";
   import Wrapper from "./Wrapper.svelte";
-  import MenuIcon from "$lib/icons/MenuIcon.svelte";
-  import CloseIcon from "$lib/icons/CloseIcon.svelte";
+  import Icon from "./Icon.svelte";
 
   let { hideLogoHeader = false }: { hideLogoHeader?: boolean } = $props();
 
@@ -14,7 +13,13 @@
 {#if !hideLogoHeader}
   <div class="logo">
     <a href="/">
-      <img src="/logo.svg" alt="logo" loading="lazy" width="200" height="200" />
+      <img
+        src="/icons/logo.svg"
+        alt="logo"
+        loading="lazy"
+        width="200"
+        height="200"
+      />
     </a>
   </div>
 {/if}
@@ -32,7 +37,7 @@
     aria-label="Open menu"
     aria-expanded={sidebarOpen}
   >
-    <MenuIcon />
+    <Icon name="material-menu" color="white" />
   </button>
 </section>
 
@@ -45,7 +50,7 @@
 
   <div class="exit-button">
     <button class="icon" onclick={closeSidebar} aria-label="Close menu">
-      <CloseIcon />
+      <Icon name="material-close" />
     </button>
   </div>
 </aside>

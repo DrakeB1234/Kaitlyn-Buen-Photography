@@ -1,6 +1,5 @@
 <script lang="ts">
-  import CloseIcon from "$lib/icons/CloseIcon.svelte";
-  import ShareIcon from "$lib/icons/ShareIcon.svelte";
+  import Icon from "./Icon.svelte";
   import Wrapper from "./Wrapper.svelte";
 
   type Props = {
@@ -34,10 +33,10 @@
             onclick={handleSharePressed}
             aria-label="Copy Link"
           >
-            <ShareIcon />
+            <Icon name="material-share" color="var(--color-white)" />
           </button>
           <button class="reset icon-btn" onclick={closeFunc} aria-label="Close">
-            <CloseIcon size={24} color="var(--color-white)" />
+            <Icon name="material-close" color="var(--color-white)" />
           </button>
         </div>
       </div>

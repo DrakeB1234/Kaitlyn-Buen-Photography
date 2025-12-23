@@ -1,11 +1,9 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { onDestroy, onMount } from "svelte";
   import { gestures } from "$lib/helpers/gestures";
   import { cubicIn } from "svelte/easing";
-  import LeftArrowIcon from "$lib/icons/LeftArrowIcon.svelte";
-  import RightArrowIcon from "$lib/icons/RightArrowIcon.svelte";
   import type { ImageData } from "$lib/data/imageData";
+  import Icon from "./Icon.svelte";
 
   type Props = {
     imageData: ImageData[];
@@ -68,11 +66,11 @@
     <div class="controls">
       <div class="control-container">
         <button class="reset" onclick={manualPrevImage}>
-          <LeftArrowIcon />
+          <Icon name="material-left-arrow" color="white" />
         </button>
         <p class="body-large">{currentIndex + 1}/{imageData.length}</p>
         <button class="reset" onclick={manualNextImage}>
-          <RightArrowIcon />
+          <Icon name="material-right-arrow" color="white" />
         </button>
       </div>
     </div>

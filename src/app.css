@@ -44,6 +44,10 @@ svg {
   display: block;
 }
 
+svg {
+  max-width: unset;
+}
+
 /* Using locally hosted fonts */
 
 @font-face {

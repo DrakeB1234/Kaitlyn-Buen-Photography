@@ -7,7 +7,7 @@
 <Wrapper backgroundColor="var(--color-primary-dark)">
   <section class="footer">
     <h1 class="body-large">Kaitlyn Buen Photography</h1>
-    <SocialLinks size={30} />
+    <SocialLinks size={24} />
     <div class="bottom">
       <div class="links">
         <Links style="justify-content: center; gap: var(--spacing-base);" />

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { emailLink } from "$lib/helpers/helpers";
-  import SendIcon from "$lib/icons/SendIcon.svelte";
+  import Icon from "./Icon.svelte";
 
   const {
     labelColor = "var(--color-white)",
@@ -31,7 +31,7 @@
     href="mailto:{emailto}?subject={subject}&body={message}"
     class="button-primary"
   >
-    <SendIcon size={20} color="var(--color-white)" />
+    <Icon name="material-send" color="var(--color-white)" />
     <p class="body">Send</p>
   </a>
 </form>
