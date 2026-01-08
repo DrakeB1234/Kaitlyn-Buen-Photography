@@ -16,7 +16,7 @@ export const packageData: PackageData[] = [
   {
     name: "Family",
     imageURL: "/images/full/gallery/IMG_0279.webp",
-    price: 75,
+    price: 100,
     details: [
       "20-25+ edited photos",
       "1 hour photoshoot",
@@ -26,22 +26,12 @@ export const packageData: PackageData[] = [
   {
     name: "Couples",
     imageURL: "/images/full/gallery/IMG_0053.webp",
-    price: 50,
+    price: 75,
     details: [
       "15-20+ edited photos",
       "45 minute photoshoot",
     ],
     message: "Hello Kaitlyn! I am interested in the Couples package listed on your site."
-  },
-  {
-    name: "Children",
-    imageURL: "/images/full/main-carousel/IMG_9719.webp",
-    price: 50,
-    details: [
-      "15-20+ edited photos",
-      "45 minute photoshoot",
-    ],
-    message: "Hello Kaitlyn! I am interested in the Children package listed on your site."
   },
   {
     name: "Seniors",
@@ -57,13 +47,13 @@ export const packageData: PackageData[] = [
   {
     name: "In Studio",
     imageURL: "/images/full/gallery/IMG_1216.webp",
-    price: 100,
+    price: 130,
     details: [
       "20-25+ edited photos",
       "30 minute photoshoot",
       "$40 booking deposit",
     ],
-    message: "Hello Kaitlyn! I am interested in the Family package listed on your site."
+    message: "Hello Kaitlyn! I am interested in the Studio package listed on your site."
   },
 ];
 
