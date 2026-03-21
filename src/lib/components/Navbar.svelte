@@ -26,7 +26,7 @@
 
 <nav class="navbar-desktop">
   <Wrapper backgroundColor="var(--color-primary-base)">
-    <Links style="justify-content: space-evenly;" />
+    <Links style="justify-content: center; gap: var(--spacing-2xlarge);" />
   </Wrapper>
 </nav>
 

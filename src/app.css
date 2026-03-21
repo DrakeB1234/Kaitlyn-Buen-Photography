@@ -181,7 +181,7 @@ a.button-primary {
   border-radius: var(--radius-base);
 
   color: var(--color-white);
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-base);
   border: 1px solid var(--color-primary-base);
 }
 

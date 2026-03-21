@@ -4,13 +4,14 @@
   import { cubicIn } from "svelte/easing";
   import type { ImageData } from "$lib/data/imageData";
   import Icon from "./Icon.svelte";
+  import { onMount } from "svelte";
 
   type Props = {
     imageData: ImageData[];
     intervalTimeout?: number;
   };
 
-  let { imageData = [], intervalTimeout = 3500 }: Props = $props();
+  let { imageData = [], intervalTimeout = 5000 }: Props = $props();
 
   let currentIndex = $state(0);
   let interval: ReturnType<typeof setInterval> | null;
@@ -36,6 +37,15 @@
   function nextImage() {
     currentIndex = (currentIndex + 1) % imageData.length;
   }
+
+  onMount(() => {
+    if (intervalTimeout > 0) {
+      interval = setInterval(nextImage, intervalTimeout);
+    }
+    return () => {
+      if (interval !== null) clearInterval(interval);
+    };
+  });
 </script>
 
 <section
@@ -84,7 +94,7 @@
   }
   .carousel-content {
     position: relative;
-    min-height: 700px;
+    min-height: 650px;
     overflow: hidden;
     width: 90%;
     max-width: 1200px;

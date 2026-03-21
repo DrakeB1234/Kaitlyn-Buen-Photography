@@ -1,41 +1,33 @@
 <script>
-  import Links from "./Links.svelte";
   import SocialLinks from "./SocialLinks.svelte";
   import Wrapper from "./Wrapper.svelte";
 </script>
 
 <Wrapper backgroundColor="var(--color-primary-dark)">
   <section class="footer">
-    <h1 class="body-large">Kaitlyn Buen Photography</h1>
-    <SocialLinks size={24} />
-    <div class="bottom">
-      <div class="links">
-        <Links style="justify-content: center; gap: var(--spacing-base);" />
-      </div>
-      <p class="body-small">Callie Buentello ©2025</p>
+    <h2 class="body-large">My Socials</h2>
+    <SocialLinks size={36} />
+    <div class="text-container">
+      <h1 class="body-large">Kaitlyn Buen Photography</h1>
+      <p class="body-small">Callie Buentello ©2026</p>
     </div>
   </section>
 </Wrapper>
 
 <style>
   .footer {
-    padding-top: var(--spacing-2xlarge);
-    padding-bottom: var(--spacing-base);
+    padding-block: var(--spacing-2xlarge);
     background-color: var(--color-primary-dark);
     color: var(--color-white);
-
-    & .bottom {
-      margin-top: var(--spacing-xlarge);
-      padding: var(--spacing-base);
-      text-align: center;
-    }
-
-    & .bottom > p {
-      margin-top: var(--spacing-xlarge);
-    }
-  }
-  .footer > h1 {
     text-align: center;
-    padding-bottom: var(--spacing-large);
+  }
+  h2 {
+    margin-bottom: var(--spacing-large);
+  }
+  .text-container {
+    margin-top: var(--spacing-2xlarge);
+  }
+  .text-container > p {
+    margin-top: var(--spacing-base);
   }
 </style>

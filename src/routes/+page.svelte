@@ -18,8 +18,8 @@
 <main>
   <Carousel imageData={fullImagesMainCarousel} />
   <Wrapper maxWidth={1100} backgroundColor="var(--color-accent-base)">
-    <About />
     <QuickButtonLinks />
+    <About />
     <Reviews />
   </Wrapper>
   <Wrapper backgroundColor="var(--color-primary-base)">

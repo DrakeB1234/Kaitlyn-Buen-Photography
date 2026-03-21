@@ -1,3 +1,7 @@
+<script>
+  import QuickButtonLinks from "./QuickButtonLinks.svelte";
+</script>
+
 <section id="about" class="about">
   <div class="content">
     <img
@@ -9,7 +13,7 @@
       height="500"
     />
     <div class="text">
-      <h2 class="heading-primary">A Little About Myself...</h2>
+      <h2 class="heading-secondary subheading">A Little About Myself...</h2>
       <p class="body-regular">
         Hi there! I'm Kaitlyn, and I'm a photographer based in <span
           style="font-weight: var(--font-weight-bold);">Springfield, MO</span
@@ -42,21 +46,14 @@
     max-width: 500px;
     height: auto;
   }
+  .subheading {
+    margin-bottom: var(--spacing-large);
+  }
   section.about div.content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xlarge);
     padding: var(--spacing-2xlarge) var(--spacing-xlarge);
-    padding-top: var(--spacing-xlarge);
-    grid-template-areas: "image text";
-
-    & > img {
-      grid-area: image;
-    }
-
-    & > div.text {
-      grid-area: text;
-    }
 
     & > div.text p.body-regular:not(:last-child) {
       margin-bottom: var(--spacing-base);
@@ -70,7 +67,6 @@
   @media (max-width: 40em) {
     section.about div.content {
       grid-template-columns: 1fr;
-      grid-template-areas: "text" "image";
     }
   }
 </style>

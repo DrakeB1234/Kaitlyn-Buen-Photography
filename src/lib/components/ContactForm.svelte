@@ -13,6 +13,9 @@
   let message: string = $state("");
 </script>
 
+<h2 class="heading-secondary" style="color: {labelColor}; text-align: center;">
+  Get in Touch!
+</h2>
 <form
   style="margin-inline: {center ? 'auto' : 'unset'}; max-width: {maxWidth
     ? `${maxWidth}px`
@@ -41,6 +44,7 @@
     display: flex;
     flex-direction: column;
     margin-inline: auto;
+    margin-top: var(--spacing-base);
 
     & label {
       color: var(--color-white);
@@ -64,5 +68,9 @@
       min-height: 8em;
       resize: none;
     }
+  }
+  a.button-primary {
+    margin-top: var(--spacing-large);
+    background-color: var(--color-primary-light);
   }
 </style>

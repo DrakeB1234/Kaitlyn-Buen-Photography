@@ -15,11 +15,9 @@
 <Wrapper maxWidth={600} backgroundColor="var(--color-white)">
   <main class="contact">
     <div class="item">
-      <p class="body-large">Contact me with my socials</p>
-      <SocialLinks color="var(--color-primary-base)" justifyContent="start" />
+      <SocialLinks color="var(--color-primary-base)" />
     </div>
     <div class="item">
-      <p class="body-large">Or Feel Free to send me an Email!</p>
       <ContactForm labelColor="var(--color-primary-2xdark)" center={false} />
     </div>
   </main>
@@ -33,8 +31,5 @@
   }
   main.contact > div.item:not(:last-child) {
     margin-bottom: var(--spacing-2xlarge);
-  }
-  main.contact > div.item > p {
-    padding-bottom: var(--spacing-large);
   }
 </style>
