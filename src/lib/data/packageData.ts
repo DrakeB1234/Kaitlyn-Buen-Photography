@@ -28,7 +28,7 @@ export const packageData: PackageData[] = [
     imageURL: "/images/full/gallery/IMG_0053.webp",
     price: 75,
     details: [
-      "15-20+ edited photos",
+      "20-25+ edited photos",
       "45 minute photoshoot",
     ],
     message: "Hello Kaitlyn! I am interested in the Couples package listed on your site."
@@ -60,6 +60,7 @@ export const packageData: PackageData[] = [
 export const packageAdditionsData = {
   additions: [
     { price: 25, detail: "Add 10 edited photos" },
+    { price: 30, detail: "Seamless Studio Backdrop" },
   ] as AdditionData[],
   fees: [
     { price: 40, detail: "Studio 30 min booking" },
