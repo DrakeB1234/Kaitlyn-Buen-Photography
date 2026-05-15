@@ -114,7 +114,7 @@
       width: 100%;
       height: auto;
       object-fit: cover;
-      object-position: center 40%;
+      object-position: center 30%;
       max-height: 350px;
     }
   }
@@ -153,5 +153,11 @@
   a.icon {
     width: fit-content;
     margin-top: var(--spacing-small);
+  }
+
+  @media (max-width: 40em) {
+    h2.package-text-large {
+      font-size: 2.5rem;
+    }
   }
 </style>

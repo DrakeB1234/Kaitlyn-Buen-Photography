@@ -60,8 +60,8 @@
 <style>
   .masonry {
     column-count: 3;
-    column-gap: var(--spacing-xsmall);
-    padding: var(--spacing-xsmall);
+    column-gap: var(--spacing-small);
+    padding: var(--spacing-small);
     padding-bottom: var(--spacing-2xlarge);
   }
 
@@ -69,7 +69,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    margin-bottom: var(--spacing-xsmall);
+    margin-bottom: var(--spacing-small);
     cursor: pointer;
   }
 
@@ -78,10 +78,10 @@
       column-count: 2;
       padding: var(--spacing-2xsmall);
       padding-bottom: var(--spacing-2xlarge);
-      column-gap: var(--spacing-2xsmall);
+      column-gap: var(--spacing-xsmall);
     }
     .masonry img {
-      margin-bottom: var(--spacing-2xsmall);
+      margin-bottom: var(--spacing-xsmall);
     }
   }
 </style>
