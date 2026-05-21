@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kaitlynbuenphotography.vercel.app/sitemap.xml
+Sitemap: https://kaitlynbuenphotography.com/sitemap.xml
