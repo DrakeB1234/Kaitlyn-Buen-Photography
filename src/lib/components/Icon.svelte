@@ -14,21 +14,17 @@
 
 	let {
 		name,
-		color = "var(--color-primary-xdark);",
+		color = "var(--color-text);",
 		size = 24,
+		...rest
 	}: {
 		name: IconName;
 		color?: string;
 		size?: number;
+		[key: string]: any;
 	} = $props();
 </script>
 
-<svg
-	aria-hidden="true"
-	fill={color}
-	width={size}
-	height={size}
-	style="height: auto; width: auto;"
->
+<svg aria-hidden="true" fill={color} width={size} height={size} {...rest}>
 	<use href="/sprite.svg#{name}" />
 </svg>

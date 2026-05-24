@@ -75,187 +75,210 @@ svg {
 }
 
 :root {
-  --spacing-2xsmall: 0.25rem;
-  --spacing-xsmall: 0.5rem;
-  --spacing-small: 0.75rem;
-  --spacing-base: 1rem;
-  --spacing-large: 1.5rem;
-  --spacing-xlarge: 2rem;
-  --spacing-2xlarge: 3.5rem;
-  --spacing-3xlarge: 5rem;
+  --palette-white: #ffffff;
+  --palette-black: #000000;
 
+  --palette-grey-100: #F9FAFB;
+  --palette-grey-200: #F3F4F6;
+  --palette-grey-300: #E5E7EB;
+  --palette-grey-400: #D1D5DB;
+  --palette-grey-500: #9CA3AF;
+  --palette-grey-600: #6B7280;
+  --palette-grey-700: #4B5563;
+  --palette-grey-800: #1F2937;
+  --palette-grey-900: #111827;
+
+  --palette-blue-light: #759DE5;
+  --palette-blue-base: #4060D0;
+  --palette-blue-dark: #374EBE;
+
+  --palette-brand: #2F3D81;
+  --palette-brand-dark: #2a3777;
+
+  --palette-tan: #E6DDD4;
+  --palette-tan-dark: #d9ccbf;
+
+  --palette-navy-light: #222849;
+  --palette-navy: #1a1f3c;
+
+  /* System UI Font Stack */
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* NAMING font-size-16 == 16px == 1rem */
+  --font-size-12: 0.75rem;
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-18: 1.125rem;
+  --font-size-24: 1.5rem;
+  --font-size-32: 2rem;
+  --font-size-48: 3rem;
+
+  --text-box-width-40: 40ch;
+  --text-box-width-50: 50ch;
+  --text-box-width-60: 60ch;
+
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-36: 2.25rem;
+  --space-52: 3.25rem;
+  --space-72: 4.5rem;
+
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-16: 16px;
+  --radius-full: 9999px;
+}
+
+:root {
   --font-family: "Crimson Pro", serif, system-ui, BlinkMacSystemFont, Roboto;
 
-  --font-weight-base: 400;
-  --font-weight-semibold: 500;
+  --font-weight-light: 400;
+  --font-weight-regular: 400;
   --font-weight-bold: 600;
 
-  --font-size-small: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-large: 1.125rem;
-  --font-size-xlarge: 1.75rem;
-  --font-size-2xlarge: 2rem;
-  --font-size-3xlarge: 3rem;
+  --font-size-sm: var(--font-size-14);
+  --font-size-base: var(--font-size-18);
+  --font-size-lg: var(--font-size-24);
+  --font-size-xlg: var(--font-size-32);
+  --font-size-2xlg: var(--font-size-48);
 
-  --line-width-xsmall: 40ch;
-  --line-width-small: 50ch;
-  --line-width-base: 60ch;
-  --line-width-large: 70ch;
-  --line-width-xlarge: 80ch;
-
-  --radius-small: 4px;
-  --radius-base: 8px;
-  --radius-large: 16px;
+  --radius-sm: var(--radius-4);
+  --radius-base: var(--radius-8);
   --radius-full: 99rem;
 
-  --color-primary-light: hsl(230, 85%, 60%);
-  --color-primary-light-hover: hsl(230, 60%, 50%);
-  --color-primary-base: #2F3D81;
-  --color-primary-dark: #1A1F3C;
-  --color-primary-xdark: #0C0F25;
-  --color-primary-2xdark: #191a22;
+  --color-bg-blue: var(--palette-blue-base);
+  --color-bg-brand: var(--palette-brand);
+  --color-bg-tan: var(--palette-tan);
+  --color-bg-navy: var(--palette-navy);
+  --color-bg-white: var(--palette-white);
 
-  --color-neutral-base: #D5DDE1;
-  --color-neutral-dark: #7e8ea3;
-  --color-neutral-xdark: #575352;
+  --color-brand-hover: var(--palette-brand-dark);
+  --color-blue-hover: var(--palette-blue-dark);
+  --color-tan-hover: var(--palette-tan-dark);
+  --color-navy-hover: var(--palette-navy-light);
 
-  --color-white: #ffffff;
+  --color-text: var(--palette-grey-900);
+  --color-text-muted: var(--palette-grey-600);
+  --color-text-inverse: var(--palette-white);
 
-  --color-accent-base: #E6DDD4;
+  --color-border: var(--palette-grey-600);
+  --color-border-inverse: var(--palette-white);
 }
 
 /* Element Overrides */
-body {
+html {
   font-family: var(--font-family);
-  font-weight: var(--font-weight-base);
-  color: var(--color-primary-xdark);
-  background-color: var(--color-primary-base);
+  background-color: var(--color-bg-brand);
+}
+
+/* text */
+
+h1,
+h2,
+h3,
+p,
+a {
+  color: var(--color-text);
+}
+
+h1 {
+  line-height: 1.2;
+  font-size: var(--font-size-xlg);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  line-height: 1.2;
+  font-size: var(--font-size-xlg);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  line-height: 1.8;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
 }
 
 a {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-base);
   text-decoration: none;
   color: inherit;
 }
 
-/* Buttons */
+.text-2xlg {
+  line-height: 1.1;
+  font-size: var(--font-size-2xlg);
+  font-weight: var(--font-weight-bold);
+}
 
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-xsmall);
-  padding: var(--spacing-xsmall) var(--spacing-base);
-  border-radius: var(--radius-base);
-  border: none;
-  background: none;
+.text-xlg {
+  line-height: 1.1;
+  font-size: var(--font-size-xlg);
+  font-weight: var(--font-weight-bold);
+}
+
+.text-lg {
+  line-height: 1.1;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.text-base {
+  line-height: 1.5;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+}
+
+.text-caption {
+  line-height: 1.5;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+}
+
+.text-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* buttons */
+.btn {
+  padding: var(--space-16);
+
+  font-size: var(--font-size-base);
+
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-button.primary {
-  color: var(--color-white);
-  background-color: var(--color-primary-light);
-  border: 1px solid var(--color-primary-base);
-}
-
-button.primary:hover {
-  background-color: var(--color-primary-light-hover);
-}
-
-button.icon {
-  padding: var(--spacing-base);
-}
-
-button.reset {
-  padding: 0;
-}
-
-a.button-primary {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-xsmall);
-
-  padding: var(--spacing-xsmall) var(--spacing-base);
   border-radius: var(--radius-base);
-
-  color: var(--color-white);
-  background-color: var(--color-primary-base);
-  border: 1px solid var(--color-primary-base);
+  border: 1px solid transparent;
 }
 
-a.button-primary:hover {
-  background-color: var(--color-primary-light-hover);
+.btn-color-brand {
+  color: var(--color-text-inverse);
+  background-color: var(--color-bg-brand);
 }
 
-a.button-secondary {
-  padding: var(--spacing-xsmall) var(--spacing-base);
-  border-radius: var(--radius-base);
-
-  border: 1px solid var(--color-primary-base);
+.btn-color-brand:hover {
+  background-color: var(--color-brand-hover);
 }
 
-a.icon {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2xsmall);
-  color: var(--color-primary-light);
+.btn-color-blue {
+  color: var(--color-text-inverse);
+  background-color: var(--color-bg-blue);
 }
 
-
-/* Text Element Classes */
-.heading-primary {
-  font-size: var(--font-size-2xlarge);
-  font-weight: var(--font-weight-bold);
-  line-height: 1.4;
+.btn-color-blue:hover {
+  background-color: var(--color-blue-hover);
 }
 
-.heading-secondary {
-  font-size: var(--font-size-xlarge);
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.4;
+.btn-color-tan {
+  background-color: var(--color-bg-tan);
 }
 
-.heading-small {
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-bold);
-  line-height: 1.4;
+.btn-color-tan:hover {
+  background-color: var(--color-tan-hover);
 }
 
-.body-large {
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-base);
-  line-height: 1.4;
-}
-
-.body-regular {
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-base);
-  line-height: 1.2;
-}
-
-.body-small {
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-base);
-  line-height: 1.2;
-}
-
-.navbar-text {
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-base);
-  line-height: 1.2;
-}
-
-.package-text-large {
-  color: var(--color-white);
-  font-size: var(--font-size-3xlarge);
-  font-weight: var(--font-weight-bold);
-  line-height: 1;
-}
-
-@media (max-width: 40em) {
-  .navbar-text {
-    font-size: 1.375rem;
-  }
+.btn-outline {
+  border-color: var(--color-border);
 }

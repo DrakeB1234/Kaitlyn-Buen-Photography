@@ -1,17 +1,17 @@
 import fs from "fs";
 import path from "path";
-import sharp from "sharp"; // Replaces image-size
+import sharp from "sharp";
 
-// --- Configuration ---
 const subdirs = [
   {
-    path: "full/main-carousel",
-    outputConstName: "fullImagesMainCarousel",
+    path: "full/gallery",
+    outputConstName: "fullImagesGallery",
   },
   {
     path: "thumbnails/gallery",
     outputConstName: "thumbnailsImagesGallery",
   },
+
 ];
 
 const baseImagesDir = "static/images";

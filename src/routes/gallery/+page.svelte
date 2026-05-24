@@ -1,87 +1,76 @@
 <script lang="ts">
-  import { afterNavigate } from "$app/navigation";
-  import Footer from "$lib/components/Footer.svelte";
   import FullImage from "$lib/components/FullImage.svelte";
-  import Navbar from "$lib/components/Navbar.svelte";
-  import Wrapper from "$lib/components/Wrapper.svelte";
   import { thumbnailsImagesGallery } from "$lib/data/imageData";
 
   let showFullImage: boolean = $state(false);
 
-  let selectedImageName: string = $state("");
+  let selectedImageNum: number = $state(0);
 
-  function handleImgClick(src: string) {
-    const parts = src.split("/");
-    const imgName = parts.find((e) => e.includes(".webp"));
-    if (!imgName) return;
-    selectedImageName = imgName;
+  function handleImgClick(index: number) {
+    selectedImageNum = index;
     showFullImage = true;
   }
-
-  afterNavigate(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
-  });
 </script>
 
 <svelte:head>
   <title>Gallery | Kaitlyn Buen Photography Springfield, MO</title>
 </svelte:head>
 
-<Navbar />
-
 {#if showFullImage}
   <FullImage
-    imgName={selectedImageName}
+    imgNum={selectedImageNum}
     closeFunc={() => (showFullImage = false)}
   />
 {/if}
+
 <main>
-  <Wrapper maxWidth={1200} backgroundColor="var(--color-white)">
-    <section class="masonry" id="gallery">
-      {#each thumbnailsImagesGallery as item, i (i)}
-        <img
-          loading="lazy"
-          src={item.url}
-          alt=""
-          onclick={() => handleImgClick(item.url)}
-          role="none"
-          width={item.width}
-          height={item.height}
-        />
-      {/each}
-    </section>
-  </Wrapper>
+  <section class="masonry" id="gallery">
+    {#each thumbnailsImagesGallery as item, i (i)}
+      <img
+        loading="lazy"
+        src={item.url}
+        alt=""
+        onclick={() => handleImgClick(i)}
+        role="none"
+        width={item.width}
+        height={item.height}
+      />
+    {/each}
+  </section>
 </main>
-<Footer />
 
 <style>
+  main {
+    background-color: var(--color-bg-tan);
+  }
   .masonry {
     column-count: 3;
-    column-gap: var(--spacing-small);
-    padding: var(--spacing-small);
-    padding-bottom: var(--spacing-2xlarge);
+    column-gap: var(--space-12);
+
+    max-width: 1200px;
+    margin: auto;
+    padding: var(--space-12);
+
+    background-color: var(--color-bg-white);
   }
 
   .masonry img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    margin-bottom: var(--spacing-small);
+    margin-bottom: var(--space-12);
     cursor: pointer;
   }
 
   @media (max-width: 50em) {
     .masonry {
       column-count: 2;
-      padding: var(--spacing-2xsmall);
-      padding-bottom: var(--spacing-2xlarge);
-      column-gap: var(--spacing-xsmall);
+
+      padding: var(--space-8);
+      column-gap: var(--space-8);
     }
     .masonry img {
-      margin-bottom: var(--spacing-xsmall);
+      margin-bottom: var(--space-8);
     }
   }
 </style>

@@ -5,222 +5,377 @@ export interface ImageData {
   height: number;
 }
 
-export const fullImagesMainCarousel: ImageData[] = [
+export const fullImagesGallery: ImageData[] = [
   {
-    "url": "/images/full/main-carousel/IMG_0286.webp",
-    "width": 1600,
-    "height": 1067
-  },
-  {
-    "url": "/images/full/main-carousel/IMG_2043.webp",
+    "url": "/images/full/gallery/IMG_100.webp",
     "width": 1600,
     "height": 1236
   },
   {
-    "url": "/images/full/main-carousel/IMG_0524.webp",
+    "url": "/images/full/gallery/IMG_101.webp",
     "width": 1600,
     "height": 1143
   },
   {
-    "url": "/images/full/main-carousel/IMG_1010.webp",
+    "url": "/images/full/gallery/IMG_102.webp",
+    "width": 1600,
+    "height": 2071
+  },
+  {
+    "url": "/images/full/gallery/IMG_103.webp",
     "width": 1600,
     "height": 1236
   },
   {
-    "url": "/images/full/main-carousel/IMG_9719.webp",
+    "url": "/images/full/gallery/IMG_104.webp",
+    "width": 1600,
+    "height": 2240
+  },
+  {
+    "url": "/images/full/gallery/IMG_105.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/full/gallery/IMG_106.webp",
+    "width": 1600,
+    "height": 1143
+  },
+  {
+    "url": "/images/full/gallery/IMG_107.webp",
     "width": 1600,
     "height": 1067
   },
   {
-    "url": "/images/full/main-carousel/IMG_9987.webp",
+    "url": "/images/full/gallery/IMG_108.webp",
     "width": 1600,
     "height": 1143
+  },
+  {
+    "url": "/images/full/gallery/IMG_109.webp",
+    "width": 1600,
+    "height": 2071
+  },
+  {
+    "url": "/images/full/gallery/IMG_110.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/full/gallery/IMG_111.webp",
+    "width": 1600,
+    "height": 2071
+  },
+  {
+    "url": "/images/full/gallery/IMG_112.webp",
+    "width": 1600,
+    "height": 2071
+  },
+  {
+    "url": "/images/full/gallery/IMG_113.webp",
+    "width": 1600,
+    "height": 1143
+  },
+  {
+    "url": "/images/full/gallery/IMG_114.webp",
+    "width": 1600,
+    "height": 1143
+  },
+  {
+    "url": "/images/full/gallery/IMG_115.webp",
+    "width": 1600,
+    "height": 2240
+  },
+  {
+    "url": "/images/full/gallery/IMG_116.webp",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "url": "/images/full/gallery/IMG_117.webp",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "url": "/images/full/gallery/IMG_118.webp",
+    "width": 1600,
+    "height": 2462
+  },
+  {
+    "url": "/images/full/gallery/IMG_119.webp",
+    "width": 1600,
+    "height": 1143
+  },
+  {
+    "url": "/images/full/gallery/IMG_120.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/full/gallery/IMG_121.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/full/gallery/IMG_122.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/full/gallery/IMG_123.webp",
+    "width": 1600,
+    "height": 2070
+  },
+  {
+    "url": "/images/full/gallery/IMG_124.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "url": "/images/full/gallery/IMG_125.webp",
+    "width": 1600,
+    "height": 2400
+  },
+  {
+    "url": "/images/full/gallery/IMG_126.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/full/gallery/IMG_127.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/full/gallery/IMG_128.webp",
+    "width": 1600,
+    "height": 2071
+  },
+  {
+    "url": "/images/full/gallery/IMG_129.webp",
+    "width": 1600,
+    "height": 2240
+  },
+  {
+    "url": "/images/full/gallery/IMG_130.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/full/gallery/IMG_131.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "url": "/images/full/gallery/IMG_132.webp",
+    "width": 1600,
+    "height": 1143
+  },
+  {
+    "url": "/images/full/gallery/IMG_133.webp",
+    "width": 1600,
+    "height": 1208
+  },
+  {
+    "url": "/images/full/gallery/IMG_134.webp",
+    "width": 1600,
+    "height": 2133
+  },
+  {
+    "url": "/images/full/gallery/IMG_135.webp",
+    "width": 1600,
+    "height": 2240
+  },
+  {
+    "url": "/images/full/gallery/IMG_136.webp",
+    "width": 1600,
+    "height": 1236
   }
 ];
 export const thumbnailsImagesGallery: ImageData[] = [
   {
-    "url": "/images/thumbnails/gallery/IMG_0010.webp",
-    "width": 400,
-    "height": 267
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_2050.webp",
-    "width": 400,
-    "height": 600
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0021.webp",
+    "url": "/images/thumbnails/gallery/IMG_100.webp",
     "width": 400,
     "height": 309
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_0053.webp",
+    "url": "/images/thumbnails/gallery/IMG_101.webp",
     "width": 400,
     "height": 286
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_0056.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0163.webp",
-    "width": 400,
-    "height": 309
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0206.webp",
-    "width": 400,
-    "height": 267
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0279.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0295.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0354.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0386-2.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0466.webp",
+    "url": "/images/thumbnails/gallery/IMG_102.webp",
     "width": 400,
     "height": 518
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_0493-2.webp",
+    "url": "/images/thumbnails/gallery/IMG_103.webp",
     "width": 400,
     "height": 309
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_0493.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0524.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0595.webp",
-    "width": 400,
-    "height": 600
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0794-2.webp",
-    "width": 400,
-    "height": 518
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0881.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0897.webp",
-    "width": 400,
-    "height": 267
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_0943.webp",
-    "width": 400,
-    "height": 518
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_1115.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_1216.webp",
-    "width": 400,
-    "height": 267
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_1230.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_1270.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_1283.webp",
-    "width": 400,
-    "height": 309
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_2223.webp",
+    "url": "/images/thumbnails/gallery/IMG_104.webp",
     "width": 400,
     "height": 560
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_2311.webp",
+    "url": "/images/thumbnails/gallery/IMG_105.webp",
     "width": 400,
     "height": 309
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_2724.webp",
+    "url": "/images/thumbnails/gallery/IMG_106.webp",
     "width": 400,
     "height": 286
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_9351.webp",
+    "url": "/images/thumbnails/gallery/IMG_107.webp",
     "width": 400,
     "height": 267
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_9405.webp",
+    "url": "/images/thumbnails/gallery/IMG_108.webp",
     "width": 400,
-    "height": 315
+    "height": 286
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_2295.webp",
+    "url": "/images/thumbnails/gallery/IMG_109.webp",
+    "width": 400,
+    "height": 518
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_110.webp",
+    "width": 400,
+    "height": 309
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_111.webp",
+    "width": 400,
+    "height": 518
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_112.webp",
+    "width": 400,
+    "height": 518
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_113.webp",
+    "width": 400,
+    "height": 286
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_114.webp",
+    "width": 400,
+    "height": 286
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_115.webp",
+    "width": 400,
+    "height": 560
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_116.webp",
+    "width": 400,
+    "height": 600
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_117.webp",
+    "width": 400,
+    "height": 600
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_118.webp",
+    "width": 400,
+    "height": 615
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_119.webp",
+    "width": 400,
+    "height": 286
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_120.webp",
+    "width": 400,
+    "height": 309
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_121.webp",
+    "width": 400,
+    "height": 309
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_122.webp",
+    "width": 400,
+    "height": 309
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_123.webp",
+    "width": 400,
+    "height": 518
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_124.webp",
     "width": 400,
     "height": 267
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_9509.webp",
+    "url": "/images/thumbnails/gallery/IMG_125.webp",
+    "width": 400,
+    "height": 600
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_126.webp",
+    "width": 400,
+    "height": 309
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_127.webp",
+    "width": 400,
+    "height": 309
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_128.webp",
+    "width": 400,
+    "height": 518
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_129.webp",
+    "width": 400,
+    "height": 560
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_130.webp",
+    "width": 400,
+    "height": 309
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_131.webp",
+    "width": 400,
+    "height": 267
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_132.webp",
+    "width": 400,
+    "height": 286
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_133.webp",
     "width": 400,
     "height": 302
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_9620.webp",
-    "width": 400,
-    "height": 300
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_9634.webp",
+    "url": "/images/thumbnails/gallery/IMG_134.webp",
     "width": 400,
     "height": 533
   },
   {
-    "url": "/images/thumbnails/gallery/IMG_9880.webp",
-    "width": 400,
-    "height": 309
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_9905.webp",
-    "width": 400,
-    "height": 286
-  },
-  {
-    "url": "/images/thumbnails/gallery/IMG_9915.webp",
+    "url": "/images/thumbnails/gallery/IMG_135.webp",
     "width": 400,
     "height": 560
+  },
+  {
+    "url": "/images/thumbnails/gallery/IMG_136.webp",
+    "width": 400,
+    "height": 309
   }
 ];

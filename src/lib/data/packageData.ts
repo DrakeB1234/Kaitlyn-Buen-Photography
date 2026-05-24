@@ -1,6 +1,8 @@
+import { fullImagesGallery, type ImageData } from "./imageData";
+
 type PackageData = {
   name: string;
-  imageURL: string;
+  imageObj: ImageData;
   price: number;
   details: string[];
   message?: string;
@@ -15,7 +17,7 @@ type AdditionData = {
 export const packageData: PackageData[] = [
   {
     name: "Family",
-    imageURL: "/images/full/gallery/IMG_0279.webp",
+    imageObj: fullImagesGallery[6],
     price: 150,
     details: [
       "20-25+ edited photos",
@@ -25,7 +27,7 @@ export const packageData: PackageData[] = [
   },
   {
     name: "Couples",
-    imageURL: "/images/full/gallery/IMG_2295.webp",
+    imageObj: fullImagesGallery[31],
     price: 75,
     details: [
       "20-25+ edited photos",
@@ -35,7 +37,7 @@ export const packageData: PackageData[] = [
   },
   {
     name: "Seniors",
-    imageURL: "/images/full/gallery/IMG_1283.webp",
+    imageObj: fullImagesGallery[36],
     price: 100,
     details: [
       "20-25+ edited photos",
@@ -45,8 +47,8 @@ export const packageData: PackageData[] = [
     message: "Hello Kaitlyn! I am interested in the Seniors package listed on your site."
   },
   {
-    name: "In Studio",
-    imageURL: "/images/full/gallery/IMG_1216.webp",
+    name: "Studio",
+    imageObj: fullImagesGallery[19],
     price: 130,
     details: [
       "20-25+ edited photos",

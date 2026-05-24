@@ -1,8 +1,5 @@
 <script lang="ts">
-  import Footer from "$lib/components/Footer.svelte";
   import Icon from "$lib/components/Icon.svelte";
-  import Navbar from "$lib/components/Navbar.svelte";
-  import Wrapper from "$lib/components/Wrapper.svelte";
   import { packageAdditionsData, packageData } from "$lib/data/packageData";
   import { messengerLink } from "$lib/helpers/helpers";
 
@@ -14,47 +11,54 @@
   <title>Pricing | Kaitlyn Buen Photography Springfield, MO</title>
 </svelte:head>
 
-<Navbar />
-<Wrapper backgroundColor="var(--color-white)" maxWidth={700}>
-  <main>
+<main>
+  <div class="content">
     {#each data as data, i (i)}
-      <div class="package-image">
-        <img
-          loading="lazy"
-          src={data.imageURL}
-          alt="package"
-          width="668"
-          height="350"
-        />
-        <div class="package-text">
-          <h2 class="package-text-large">{data.name}</h2>
+      <div class="content-container">
+        <div class="package-image">
+          <img
+            loading="lazy"
+            src={data.imageObj.url}
+            alt="package"
+            width={data.imageObj.width}
+            height={data.imageObj.height}
+          />
+          <div class="package-text">
+            <h2 class="text-2xlg">{data.name}</h2>
+          </div>
         </div>
-      </div>
-      <div class="package-details">
-        <h2 class="body-large">Starting at <span>${data.price}</span></h2>
-        <hr />
-        <div class="data">
+
+        <div class="heading-container">
+          <h2 class="text-base">
+            Starting at <span class="text-lg">${data.price}</span>
+          </h2>
+        </div>
+        <div class="details-container">
           {#each data.details as detail, i (i)}
-            <p class="body-large">{detail}</p>
+            <p>{detail}</p>
           {/each}
         </div>
-        <a class="icon" href={messengerLink} target="_blank"
-          >Interested? Contact me! <Icon
-            size={20}
-            name="material-link"
-            color="var(--color-primary-light)"
-          /></a
-        >
+        <div class="link-container">
+          <a href={messengerLink} target="_blank"
+            >Interested? Contact me! <Icon
+              size={16}
+              name="material-link"
+              color="var(--color-bg-blue)"
+            /></a
+          >
+        </div>
       </div>
     {/each}
 
-    <h2 class="heading-secondary">Package Additions / Fees</h2>
-    <div class="package-details additions">
-      <p class="body-large title">Additions</p>
-      <div class="data">
+    <h2 class="text-lg space-below">Package Additions / Fees</h2>
+    <div class="content-container">
+      <div class="heading-container">
+        <p class="text-bold">Additions</p>
+      </div>
+      <div class="details-container">
         {#each additionsData.additions as item, i (i)}
           <p class="body-large">
-            <span
+            <span class="text-bold"
               >${item.minPrice
                 ? `${item.minPrice} - ${item.price}`
                 : item.price}</span
@@ -63,12 +67,13 @@
           </p>
         {/each}
       </div>
-      <hr />
-      <p class="body-large title">Fees</p>
-      <div class="data">
+      <div class="heading-container">
+        <p class="text-bold">Fees</p>
+      </div>
+      <div class="details-container">
         {#each additionsData.fees as item, i (i)}
-          <p class="body-large">
-            <span
+          <p>
+            <span class="text-bold"
               >${item.minPrice
                 ? `${item.minPrice} - ${item.price}`
                 : item.price}</span
@@ -77,87 +82,83 @@
           </p>
         {/each}
       </div>
-      <a class="icon" href={messengerLink} target="_blank"
-        >Questions? Contact me! <Icon
-          size={20}
-          name="material-link"
-          color="var(--color-primary-light)"
-        /></a
-      >
+      <div class="link-container">
+        <a href={messengerLink} target="_blank"
+          >Questions? Contact me! <Icon
+            size={16}
+            name="material-link"
+            color="var(--color-bg-blue)"
+          /></a
+        >
+      </div>
     </div>
-  </main>
-</Wrapper>
-
-<Footer />
+  </div>
+</main>
 
 <style>
   main {
-    padding: var(--spacing-base);
+    padding: var(--space-16);
+    background-color: var(--color-bg-tan);
+  }
+  .content {
+    max-width: 650px;
+    margin: auto;
   }
   .package-image {
     position: relative;
-
-    & .package-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      inset: 0;
-    }
-
-    & h2 {
-      background-color: rgba(0, 0, 0, 0.3);
-      box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    & img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: center 30%;
-      max-height: 350px;
-    }
   }
-  .package-details {
-    margin-bottom: var(--spacing-xlarge);
-    padding: var(--spacing-xlarge) var(--spacing-base);
-    border: 4px double black;
-    border-top: 0;
-  }
-  .package-details > h2 {
-    margin-bottom: var(--spacing-large);
-  }
-  .package-details > .data {
+
+  .package-text {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-small);
-    padding-block: var(--spacing-large);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
   }
 
-  .package-details.additions {
-    border: 4px double black;
-  }
-  .package-details.additions > p.title {
-    font-weight: var(--font-weight-bold);
-  }
-  .package-details.additions > p.title:nth-of-type(2) {
-    margin-top: var(--spacing-large);
-  }
-  .package-details.additions > div.data {
-    padding-top: var(--spacing-base);
+  .package-text h2 {
+    color: var(--color-text-inverse);
+    background: transparent;
+    text-shadow: 0 0 20px rgba(0, 0, 0);
   }
 
-  span {
-    font-weight: var(--font-weight-bold);
-  }
-  a.icon {
-    width: fit-content;
-    margin-top: var(--spacing-small);
+  .package-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center 30%;
+    max-height: 350px;
   }
 
-  @media (max-width: 40em) {
-    h2.package-text-large {
-      font-size: 2.5rem;
-    }
+  .content-container {
+    border: 4px double var(--color-border);
+    margin-bottom: var(--space-36);
+  }
+
+  .heading-container {
+    padding: var(--space-24) var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .details-container {
+    padding: var(--space-24);
+    padding-top: 0;
+  }
+
+  .link-container {
+    padding: var(--space-24) var(--space-16);
+    padding-top: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    color: var(--color-bg-blue);
+
+    gap: var(--space-4);
+  }
+
+  .space-below {
+    margin-bottom: var(--space-12);
   }
 </style>

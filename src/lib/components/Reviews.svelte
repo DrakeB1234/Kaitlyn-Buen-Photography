@@ -1,5 +1,5 @@
-<section class="reviews">
-  <div class="review-container">
+<div class="wrapper">
+  <section class="reviews">
     <div class="review">
       <p class="body-regular">
         The pictures were we had taken came back quickly and they were so cute,
@@ -23,24 +23,26 @@
       </p>
       <p class="body-large">- Ashley</p>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <style>
-  section.reviews {
-    border-top: 1px solid var(--color-neutral-xdark);
-    padding: var(--spacing) var(--spacing-base);
-    margin-top: var(--spacing-2xlarge);
+  .wrapper {
+    background-color: var(--color-bg-tan);
   }
-  .review-container {
+  section.reviews {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-xlarge);
+    gap: var(--space-36);
     place-items: center;
     align-items: stretch;
+
     overflow: hidden;
-    padding-block: var(--spacing-2xlarge);
-    padding-inline: var(--spacing-xlarge);
+    max-width: 1000px;
+    padding: var(--space-36);
+    margin: auto;
+
+    border-top: 1px solid var(--color-border);
   }
   .review {
     text-align: center;
@@ -49,7 +51,7 @@
     max-width: var(--line-width-xsmall);
   }
   .review > p:last-child {
-    margin-top: var(--spacing-base);
+    margin-top: var(--space-16);
   }
   p.body-regular {
     line-height: 1.8;

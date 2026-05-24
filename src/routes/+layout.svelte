@@ -2,12 +2,22 @@
 	import { injectAnalytics } from "@vercel/analytics/sveltekit";
 	import { dev } from "$app/environment";
 	import "../app.css";
+	import Navbar from "$lib/components/Navbar.svelte";
+	import Footer from "$lib/components/Footer.svelte";
+	import { beforeNavigate } from "$app/navigation";
 
 	injectAnalytics({
 		mode: dev ? "development" : "production",
 	});
 
 	let { children } = $props();
+
+	beforeNavigate(() => {
+		window.scrollTo({
+			top: 0,
+			behavior: "instant",
+		});
+	});
 </script>
 
 <svelte:head>
@@ -55,4 +65,6 @@
 	`}
 </svelte:head>
 
+<Navbar />
 {@render children()}
+<Footer />

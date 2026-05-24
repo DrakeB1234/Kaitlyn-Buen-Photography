@@ -6,57 +6,40 @@
   import Icon from "./Icon.svelte";
   import { onMount } from "svelte";
 
-  type Props = {
+  let {
+    imageData = [],
+    intervalTimeout = 5000,
+  }: {
     imageData: ImageData[];
     intervalTimeout?: number;
-  };
-
-  let { imageData = [], intervalTimeout = 5000 }: Props = $props();
+  } = $props();
 
   let currentIndex = $state(0);
-  let interval: ReturnType<typeof setInterval> | null;
+  let interval: ReturnType<typeof setInterval>;
 
-  function manualPrevImage() {
-    if (interval !== null) clearInterval(interval);
-    interval = null;
-
-    prevImage();
-  }
-
-  function manualNextImage() {
-    if (interval !== null) clearInterval(interval);
-    interval = null;
-
-    nextImage();
-  }
-
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + imageData.length) % imageData.length;
-  }
-
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % imageData.length;
+  function navigate(direction: number, isManual = false) {
+    if (isManual) clearInterval(interval);
+    currentIndex =
+      (currentIndex + direction + imageData.length) % imageData.length;
   }
 
   onMount(() => {
     if (intervalTimeout > 0) {
-      interval = setInterval(nextImage, intervalTimeout);
+      interval = setInterval(() => navigate(1), intervalTimeout);
     }
-    return () => {
-      if (interval !== null) clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   });
 </script>
 
 <section
   class="carousel"
   use:gestures
-  onswipeleft={manualNextImage}
-  onswiperight={manualPrevImage}
+  onswipeleft={() => navigate(1, true)}
+  onswiperight={() => navigate(-1, true)}
 >
   <div
     class="background"
-    style="background-image: url({imageData[0].url});"
+    style="background-image: url({imageData[currentIndex]?.url});"
   ></div>
 
   <div class="carousel-content">
@@ -75,12 +58,12 @@
 
     <div class="controls">
       <div class="control-container">
-        <button class="reset" onclick={manualPrevImage}>
-          <Icon name="material-left-arrow" color="white" />
+        <button class="btn" onclick={() => navigate(-1, true)}>
+          <Icon name="material-left-arrow" color="var(--color-text-inverse)" />
         </button>
         <p class="body-large">{currentIndex + 1}/{imageData.length}</p>
-        <button class="reset" onclick={manualNextImage}>
-          <Icon name="material-right-arrow" color="white" />
+        <button class="btn" onclick={() => navigate(1, true)}>
+          <Icon name="material-right-arrow" color="var(--color-text-inverse)" />
         </button>
       </div>
     </div>
@@ -88,16 +71,16 @@
 </section>
 
 <style>
+  /* Styles remain unchanged */
   section.carousel {
     position: relative;
     overflow: hidden;
   }
   .carousel-content {
     position: relative;
-    min-height: 650px;
+    min-height: 450px;
     overflow: hidden;
-    width: 90%;
-    max-width: 1200px;
+    max-width: 800px;
     margin-inline: auto;
   }
 
@@ -113,20 +96,20 @@
     position: absolute;
     inset: 0;
     top: unset;
-    padding: var(--spacing-small);
-    color: var(--color-white);
+    padding: var(--space-12);
   }
   .control-container {
     margin-inline: auto;
     display: flex;
     align-items: center;
     width: fit-content;
-    gap: var(--spacing-base);
+    gap: var(--space-16);
     background-color: rgba(0, 0, 0, 0.6);
-    padding: var(--spacing-2xsmall) var(--spacing-small);
+    padding: var(--space-4) var(--space-12);
     border-radius: var(--radius-base);
   }
   .control-container p {
+    color: var(--color-text-inverse);
     min-width: 5ch;
     text-align: center;
   }
@@ -139,7 +122,11 @@
     filter: blur(10px) brightness(0.6);
     transform: scale(1.1);
     z-index: -1;
-    background-color: var(--color-white);
+  }
+
+  .btn {
+    background-color: transparent;
+    padding: var(--space-4);
   }
 
   @media (max-width: 40em) {

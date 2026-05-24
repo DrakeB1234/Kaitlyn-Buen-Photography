@@ -1,9 +1,5 @@
-<script>
-  import QuickButtonLinks from "./QuickButtonLinks.svelte";
-</script>
-
-<section id="about" class="about">
-  <div class="content">
+<div class="wrapper">
+  <section class="about-me">
     <img
       class="about-me-image"
       src="/picofme.webp"
@@ -13,59 +9,58 @@
       height="500"
     />
     <div class="text">
-      <h2 class="heading-secondary subheading">A Little About Myself...</h2>
-      <p class="body-regular">
+      <h2>A Little About Myself...</h2>
+      <p>
         Hi there! I'm Kaitlyn, and I'm a photographer based in <span
           style="font-weight: var(--font-weight-bold);">Springfield, MO</span
         >. Photography has always been more than just pictures for me — it's
         about capturing genuine moments that tell your story. Whether it's the
-        quiet sweetness of a newborn, the laughter between a couple, or the joy
-        and connection of family life, I love preserving those emotions so you
-        can relive them for years to come.
+        the laughter between a couple, or the joy and connection of family life,
+        I love preserving those emotions so you can relive them for years to
+        come.
       </p>
-      <p class="body-regular">
+      <p>
         My goal with every session is to create a relaxed, comfortable
         atmosphere where you can just be yourselves. The best photos happen in
         those in-between moments — the giggles, the cuddles, the glances that
         say it all.
       </p>
-      <p class="body-regular">
+      <p>
         Thank you for letting me be a part of your memories. I can`t wait to
         help you capture yours!
       </p>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <style>
-  section.about {
-    background-color: var(--color-accent-base);
+  .wrapper {
+    background-color: var(--color-bg-tan);
+  }
+  .about-me {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-36);
+
+    padding: var(--space-52) var(--space-36);
+    max-width: 1000px;
+    margin: auto;
   }
   .about-me-image {
     width: 100%;
-    max-width: 500px;
     height: auto;
   }
-  .subheading {
-    margin-bottom: var(--spacing-large);
-  }
-  section.about div.content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xlarge);
-    padding: var(--spacing-2xlarge) var(--spacing-xlarge);
 
-    & > div.text p.body-regular:not(:last-child) {
-      margin-bottom: var(--spacing-base);
-    }
-    & p.body-regular {
-      line-height: 1.8;
-      max-width: var(--line-width-small);
-    }
+  h2 {
+    margin-bottom: var(--space-24);
+  }
+
+  p:not(:last-child) {
+    margin-bottom: var(--space-24);
   }
 
   @media (max-width: 40em) {
-    section.about div.content {
+    .about-me {
       grid-template-columns: 1fr;
     }
   }

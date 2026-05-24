@@ -1,33 +1,35 @@
 <script>
   import SocialLinks from "./SocialLinks.svelte";
-  import Wrapper from "./Wrapper.svelte";
 </script>
 
-<Wrapper backgroundColor="var(--color-primary-dark)">
-  <section class="footer">
-    <h2 class="body-large">My Socials</h2>
-    <SocialLinks size={36} />
-    <div class="text-container">
-      <h1 class="body-large">Kaitlyn Buen Photography</h1>
-      <p class="body-small">Callie Buentello ©2026</p>
-    </div>
-  </section>
-</Wrapper>
+<section class="footer">
+  <h2 class="text-base">My Socials</h2>
+  <SocialLinks size={36} />
+  <div class="text-container">
+    <h1 class="text-base">Kaitlyn Buen Photography</h1>
+    <p class="text-caption">Callie Buentello ©2026</p>
+  </div>
+</section>
 
 <style>
   .footer {
-    padding-block: var(--spacing-2xlarge);
-    background-color: var(--color-primary-dark);
-    color: var(--color-white);
+    padding-block: var(--space-52);
+    background-color: var(--color-bg-navy);
     text-align: center;
   }
+  h1,
+  h2,
+  p {
+    color: var(--color-text-inverse);
+  }
+
   h2 {
-    margin-bottom: var(--spacing-large);
+    margin-bottom: var(--space-24);
   }
   .text-container {
-    margin-top: var(--spacing-2xlarge);
+    margin-top: var(--space-52);
   }
   .text-container > p {
-    margin-top: var(--spacing-base);
+    margin-top: var(--space-16);
   }
 </style>

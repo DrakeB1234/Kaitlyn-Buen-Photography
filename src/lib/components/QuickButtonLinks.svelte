@@ -1,5 +1,5 @@
 <section class="quick-links">
-  <div class="small-logo">
+  <div class="logo-container">
     <img
       class="logo-flower"
       src="/icons/logo-flower.svg"
@@ -17,41 +17,41 @@
       height="150"
     />
   </div>
-  <div class="buttons">
-    <a class="button-primary" href="/pricing">View my Pricing!</a>
-    <a class="button-secondary" href="/gallery">Check out my work!</a>
+  <div class="button-container">
+    <a class="btn btn-color-blue" href="/pricing">View my Pricing!</a>
+    <a class="btn btn-color-tan btn-outline" href="/gallery"
+      >Check out my work!</a
+    >
   </div>
 </section>
 
 <style>
   a {
-    padding-block: var(--spacing-small);
+    padding-block: var(--space-12);
   }
   .quick-links {
-    padding: var(--spacing-base);
+    background-color: var(--color-bg-tan);
+    padding: var(--space-24);
+    padding-top: var(--space-36);
   }
-  .small-logo {
+  .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: fit-content;
-    padding: var(--spacing-large) var(--spacing-xlarge);
-    padding-bottom: var(--spacing-base);
   }
-  .small-logo img.logo-text {
+  .logo-text {
     max-width: 250px;
     height: auto;
   }
-  .small-logo img.logo-flower {
+  .logo-flower {
     max-width: 80px;
     height: auto;
   }
-  .buttons {
+  .button-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-base);
-    /* padding-inline: var(--spacing-base); */
-    padding-top: var(--spacing-base);
+    gap: var(--space-8);
+
+    margin-top: var(--space-36);
   }
 </style>

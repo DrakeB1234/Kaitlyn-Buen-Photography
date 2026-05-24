@@ -41,6 +41,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: var(--spacing-large);
+    gap: var(--space-24);
   }
 </style>

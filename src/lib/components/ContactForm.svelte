@@ -2,75 +2,81 @@
   import { emailLink } from "$lib/helpers/helpers";
   import Icon from "./Icon.svelte";
 
-  const {
-    labelColor = "var(--color-white)",
-    center = true,
-    maxWidth = 0,
-  }: { labelColor?: string; center?: boolean; maxWidth?: number } = $props();
+  const { variant = "brand" }: { variant?: "brand" | "white" } = $props();
 
   const emailto: string = emailLink;
   let subject: string = $state("Photography Services");
   let message: string = $state("");
 </script>
 
-<h2 class="heading-secondary" style="color: {labelColor}; text-align: center;">
-  Get in Touch!
-</h2>
-<form
-  style="margin-inline: {center ? 'auto' : 'unset'}; max-width: {maxWidth
-    ? `${maxWidth}px`
-    : 'unset'};"
->
-  <label for="subject" style="color: {labelColor}">Subject</label>
-  <input id="subject" placeholder="Subject" bind:value={subject} />
+<div class="wrapper">
+  <h2 class={"text-variant-" + variant}>Get in Touch!</h2>
+  <form>
+    <label for="subject" class={"text-variant-" + variant}>Subject</label>
+    <input id="subject" placeholder="Subject" bind:value={subject} />
 
-  <label for="message" style="color: {labelColor}">Message</label>
-  <textarea
-    id="message"
-    placeholder="Hello Kaitlyn! I am interested in booking a appointment with you for a couples shoot!"
-    bind:value={message}
-  ></textarea>
-  <a
-    href="mailto:{emailto}?subject={subject}&body={message}"
-    class="button-primary"
-  >
-    <Icon name="material-send" color="var(--color-white)" />
-    <p class="body">Send</p>
-  </a>
-</form>
+    <label for="message" class={"text-variant-" + variant}>Message</label>
+    <textarea
+      id="message"
+      placeholder="Hello Kaitlyn! I am interested in booking a appointment with you for a couples shoot!"
+      bind:value={message}
+    ></textarea>
+    <a
+      href="mailto:{emailto}?subject={subject}&body={message}"
+      class="btn btn-color-blue"
+    >
+      <Icon name="material-send" color="var(--color-text-inverse)" />
+      <p>Send</p>
+    </a>
+  </form>
+</div>
 
 <style>
-  form {
-    display: flex;
-    flex-direction: column;
-    margin-inline: auto;
-    margin-top: var(--spacing-base);
-
-    & label {
-      color: var(--color-white);
-      margin-bottom: var(--spacing-xsmall);
-    }
-
-    & textarea,
-    input {
-      padding: var(--spacing-small) var(--spacing-small);
-      border-radius: var(--radius-small);
-      border: 1px solid var(--color-neutral-base);
-      margin-bottom: var(--spacing-base);
-      color: var(--color-primary-xdark);
-
-      &::placeholder {
-        color: var(--color-neutral-dark);
-      }
-    }
-
-    & textarea {
-      min-height: 8em;
-      resize: none;
-    }
+  .wrapper {
+    padding: var(--space-52) var(--space-24);
   }
-  a.button-primary {
-    margin-top: var(--spacing-large);
-    background-color: var(--color-primary-light);
+  form {
+    display: grid;
+
+    max-width: 450px;
+    margin: auto;
+    margin-top: var(--space-36);
+  }
+  .text-variant-brand {
+    color: white;
+  }
+  h2 {
+    text-align: center;
+  }
+  label {
+    line-height: 1.5;
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-4);
+  }
+  input,
+  textarea {
+    border: 1px solid var(--color-border);
+    padding: var(--space-12);
+    border-radius: var(--radius-base);
+  }
+  textarea {
+    min-height: 8em;
+    resize: none;
+  }
+  input {
+    margin-bottom: var(--space-16);
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-8);
+
+    padding-block: var(--space-4);
+    margin-top: var(--space-24);
+  }
+
+  a p {
+    color: var(--color-text-inverse);
   }
 </style>

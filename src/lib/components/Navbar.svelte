@@ -1,38 +1,39 @@
 <script lang="ts">
-  import Links from "./Links.svelte";
-  import Wrapper from "./Wrapper.svelte";
   import Icon from "./Icon.svelte";
 
-  let { hideLogoHeader = false }: { hideLogoHeader?: boolean } = $props();
+  import { page } from "$app/state";
+  import { onNavigate } from "$app/navigation";
+
+  const currentPath = $derived(page.url.pathname);
 
   let sidebarOpen = $state(false);
   const toggleSidebar = () => (sidebarOpen = !sidebarOpen);
   const closeSidebar = () => (sidebarOpen = false);
+
+  onNavigate(() => {
+    closeSidebar();
+  });
 </script>
 
-{#if !hideLogoHeader}
-  <div class="logo">
-    <a href="/">
-      <img
-        src="/icons/logo.svg"
-        alt="logo"
-        loading="lazy"
-        width="200"
-        height="200"
-      />
-    </a>
-  </div>
-{/if}
+<div class="logo">
+  <a href="/">
+    <img
+      src="/icons/logo.svg"
+      alt="logo"
+      loading="lazy"
+      width="180"
+      height="180"
+    />
+  </a>
+</div>
 
 <nav class="navbar-desktop">
-  <Wrapper backgroundColor="var(--color-primary-base)">
-    <Links style="justify-content: center; gap: var(--spacing-2xlarge);" />
-  </Wrapper>
+  {@render links()}
 </nav>
 
 <section class="navbar-mobile">
   <button
-    class="icon"
+    class="btn btn-color-brand"
     onclick={toggleSidebar}
     aria-label="Open menu"
     aria-expanded={sidebarOpen}
@@ -42,25 +43,44 @@
 </section>
 
 <aside class="sidebar {sidebarOpen ? 'open' : ''}" role="navigation">
-  <div class="links">
-    <Links
-      style="flex-direction: column; align-items: end; gap: var(--spacing-large);"
-    />
-  </div>
+  {@render links()}
 
-  <div class="exit-button">
-    <button class="icon" onclick={closeSidebar} aria-label="Close menu">
+  <div class="side-container">
+    <button
+      class="btn btn-color-tan"
+      onclick={closeSidebar}
+      aria-label="Close menu"
+    >
       <Icon name="material-close" />
     </button>
   </div>
 </aside>
 
+{#snippet links()}
+  <ul class="links" role="list">
+    <li>
+      <a class:active={currentPath === "/"} href="/">HOME</a>
+    </li>
+    <li>
+      <a class:active={currentPath === "/about"} href="/about">ABOUT</a>
+    </li>
+    <li>
+      <a class:active={currentPath === "/pricing"} href="/pricing">PRICING</a>
+    </li>
+    <li>
+      <a class:active={currentPath === "/gallery"} href="/gallery">GALLERY</a>
+    </li>
+    <li>
+      <a class:active={currentPath === "/contact"} href="/contact">CONTACT</a>
+    </li>
+  </ul>
+{/snippet}
+
 <style>
   div.logo {
     display: flex;
     justify-content: center;
-    padding: var(--spacing-base);
-    background-color: var(--color-primary-base);
+    padding: var(--space-16);
   }
   div.logo img {
     max-width: 140px;
@@ -70,16 +90,22 @@
   .navbar-mobile {
     position: sticky;
     top: 0;
-    color: var(--color-white);
-    padding: var(--spacing-base);
+    padding: var(--space-16);
     z-index: 10;
-    background-color: var(--color-primary-base);
+    background-color: var(--color-bg-brand);
+  }
+
+  .navbar-desktop .links {
+    justify-content: space-evenly;
+    max-width: 800px;
+    margin: auto;
   }
 
   .navbar-mobile {
     display: flex;
     justify-content: end;
     padding-block: 0;
+    padding-right: 0;
   }
 
   .sidebar {
@@ -92,21 +118,32 @@
     z-index: 10;
     display: flex;
     overflow: auto;
-    background-color: var(--color-primary-base);
+    background-color: var(--color-bg-brand);
   }
 
   .sidebar.open {
     right: 0;
   }
 
-  .exit-button {
-    background-color: var(--color-white);
+  .sidebar .side-container {
+    background-color: var(--color-bg-tan);
   }
 
   .links {
+    display: flex;
+    justify-content: center;
+
     width: 100%;
-    padding: var(--spacing-2xlarge) var(--spacing-2xlarge);
-    color: var(--color-white);
+    color: var(--color-text-inverse);
+  }
+
+  .links li,
+  .links a {
+    padding-bottom: 3px;
+  }
+
+  a.active {
+    border-bottom: 2px solid var(--color-border-inverse);
   }
 
   @media (min-width: 40em) {
@@ -120,6 +157,16 @@
   @media (max-width: 40em) {
     .navbar-desktop {
       display: none;
+    }
+    .links {
+      flex-direction: column;
+      justify-content: start;
+      align-items: end;
+      gap: var(--space-16);
+
+      font-size: var(--font-size-xlg);
+
+      padding: var(--space-52);
     }
   }
 </style>
