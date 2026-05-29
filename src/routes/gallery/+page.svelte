@@ -13,6 +13,7 @@
 </script>
 
 <svelte:head>
+  <link rel="canonical" href="https://kaitlynbuenphotography.com/gallery" />
   <title>Gallery | Kaitlyn Buen Photography Springfield, MO</title>
 </svelte:head>
 

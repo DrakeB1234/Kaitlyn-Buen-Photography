@@ -1,11 +1,10 @@
 <script>
   import ContactForm from "$lib/components/ContactForm.svelte";
-  import Footer from "$lib/components/Footer.svelte";
-  import Navbar from "$lib/components/Navbar.svelte";
   import SocialLinks from "$lib/components/SocialLinks.svelte";
 </script>
 
 <svelte:head>
+  <link rel="canonical" href="https://kaitlynbuenphotography.com/contact" />
   <title>Contact Me | Kaitlyn Buen Photography Springfield, MO</title>
 </svelte:head>
 

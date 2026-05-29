@@ -22,7 +22,7 @@
 
 <svelte:head>
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-	<title>Kaitlyn Buen Photography | Springfield, MO Photographer</title>
+
 	<meta
 		name="description"
 		content="Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."

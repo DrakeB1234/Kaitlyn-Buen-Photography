@@ -8,6 +8,7 @@
 </script>
 
 <svelte:head>
+  <link rel="canonical" href="https://kaitlynbuenphotography.com/" />
   <title>Kaitlyn Buen Photography | Springfield, MO Photographer</title>
 </svelte:head>
 
