@@ -163,6 +163,7 @@ svg {
   --color-text: var(--palette-grey-900);
   --color-text-muted: var(--palette-grey-600);
   --color-text-inverse: var(--palette-white);
+  --color-text-blue: var(--palette-blue-base);
 
   --color-border: var(--palette-grey-600);
   --color-border-inverse: var(--palette-white);

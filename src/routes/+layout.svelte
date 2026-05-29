@@ -40,7 +40,7 @@
 	<meta property="og:url" content="https://kaitlynbuenphotography.com/" />
 	<meta
 		property="og:image"
-		content="https://kaitlynbuenphotography.com/images/full/gallery/IMG_0386-2.webp"
+		content="https://www.kaitlynbuenphotography.com/images/full/gallery/IMG_107.webp"
 	/>
 
 	{@html `<script type="application/ld+json">\

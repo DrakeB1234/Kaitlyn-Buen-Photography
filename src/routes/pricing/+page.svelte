@@ -1,5 +1,6 @@
 <script lang="ts">
   import Icon from "$lib/components/Icon.svelte";
+  import { BASE_APP_TITLE, BASE_APP_URL } from "$lib/data/constants";
   import { packageAdditionsData, packageData } from "$lib/data/packageData";
   import { messengerLink } from "$lib/helpers/helpers";
 
@@ -8,34 +9,34 @@
 </script>
 
 <svelte:head>
-  <link rel="canonical" href="https://kaitlynbuenphotography.com/pricing" />
-  <title>Pricing | Kaitlyn Buen Photography Springfield, MO</title>
+  <link rel="canonical" href={BASE_APP_URL + "pricing"} />
+  <title>Pricing | {BASE_APP_TITLE}</title>
 </svelte:head>
 
 <main>
   <div class="content">
-    {#each data as data, i (i)}
+    {#each data as pkg, i (i)}
       <div class="content-container">
         <div class="package-image">
           <img
             loading="lazy"
-            src={data.imageObj.url}
+            src={pkg.imageObj.url}
             alt="package"
-            width={data.imageObj.width}
-            height={data.imageObj.height}
+            width={pkg.imageObj.width}
+            height={pkg.imageObj.height}
           />
           <div class="package-text">
-            <h2 class="text-2xlg">{data.name}</h2>
+            <h2 class="text-2xlg">{pkg.name}</h2>
           </div>
         </div>
 
         <div class="heading-container">
           <h2 class="text-base">
-            Starting at <span class="text-lg">${data.price}</span>
+            Starting at <span class="text-lg">${pkg.price}</span>
           </h2>
         </div>
         <div class="details-container">
-          {#each data.details as detail, i (i)}
+          {#each pkg.details as detail, i (i)}
             <p>{detail}</p>
           {/each}
         </div>

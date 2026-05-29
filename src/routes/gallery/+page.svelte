@@ -1,5 +1,6 @@
 <script lang="ts">
   import FullImage from "$lib/components/FullImage.svelte";
+  import { BASE_APP_TITLE, BASE_APP_URL } from "$lib/data/constants";
   import { thumbnailsImagesGallery } from "$lib/data/imageData";
 
   let showFullImage: boolean = $state(false);
@@ -13,8 +14,8 @@
 </script>
 
 <svelte:head>
-  <link rel="canonical" href="https://kaitlynbuenphotography.com/gallery" />
-  <title>Gallery | Kaitlyn Buen Photography Springfield, MO</title>
+  <link rel="canonical" href={BASE_APP_URL + "gallery"} />
+  <title>Gallery | {BASE_APP_TITLE}</title>
 </svelte:head>
 
 {#if showFullImage}

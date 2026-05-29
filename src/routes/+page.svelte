@@ -5,11 +5,12 @@
   import QuickButtonLinks from "$lib/components/QuickButtonLinks.svelte";
   import Reviews from "$lib/components/Reviews.svelte";
   import { fullImagesMainCarousel } from "$lib/data/carouselImageData";
+  import { BASE_APP_TITLE, BASE_APP_URL } from "$lib/data/constants";
 </script>
 
 <svelte:head>
-  <link rel="canonical" href="https://kaitlynbuenphotography.com/" />
-  <title>Kaitlyn Buen Photography | Springfield, MO Photographer</title>
+  <link rel="canonical" href={BASE_APP_URL} />
+  <title>{BASE_APP_TITLE}</title>
 </svelte:head>
 
 <main>
