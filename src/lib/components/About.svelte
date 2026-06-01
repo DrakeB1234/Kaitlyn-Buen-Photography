@@ -9,7 +9,7 @@
       height="500"
     />
     <div class="text">
-      <h2>A Little About Myself...</h2>
+      <h2 class="text-lg">A Little About Myself...</h2>
       <p>
         Hi there! I'm Kaitlyn, and I'm a photographer based in <span
           style="font-weight: var(--font-weight-bold);">Springfield, MO</span
@@ -40,28 +40,32 @@
   .about-me {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-36);
+    gap: var(--space-24);
 
     padding: var(--space-52) var(--space-36);
+    padding-bottom: var(--space-72);
     max-width: 1000px;
     margin: auto;
   }
   .about-me-image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
+
+    object-fit: cover;
   }
 
   h2 {
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-16);
   }
 
   p:not(:last-child) {
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-16);
   }
 
   @media (max-width: 40em) {
     .about-me {
       grid-template-columns: 1fr;
+      gap: var(--space-36);
     }
   }
 </style>

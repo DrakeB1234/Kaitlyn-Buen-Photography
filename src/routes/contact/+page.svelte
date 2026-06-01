@@ -10,13 +10,13 @@
 </svelte:head>
 
 <main class="contact">
-  <SocialLinks color="var(--color-primary-base)" />
+  <SocialLinks />
   <ContactForm variant="white" />
 </main>
 
 <style>
   main {
-    background-color: var(--color-bg-tan);
+    background-color: var(--color-bg-white);
     padding: var(--space-52) var(--space-24);
   }
 </style>

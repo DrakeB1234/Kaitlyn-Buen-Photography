@@ -1,4 +1,4 @@
-import { fullImagesGallery, type ImageData } from "./imageData";
+import { packagesImages, type ImageData } from "./imageData";
 
 type PackageData = {
   name: string;
@@ -17,7 +17,7 @@ type AdditionData = {
 export const packageData: PackageData[] = [
   {
     name: "Family",
-    imageObj: fullImagesGallery[6],
+    imageObj: packagesImages[1],
     price: 150,
     details: [
       "20-25+ edited photos",
@@ -27,7 +27,7 @@ export const packageData: PackageData[] = [
   },
   {
     name: "Couples",
-    imageObj: fullImagesGallery[31],
+    imageObj: packagesImages[0],
     price: 75,
     details: [
       "20-25+ edited photos",
@@ -37,7 +37,7 @@ export const packageData: PackageData[] = [
   },
   {
     name: "Seniors",
-    imageObj: fullImagesGallery[36],
+    imageObj: packagesImages[2],
     price: 100,
     details: [
       "20-25+ edited photos",
@@ -48,7 +48,7 @@ export const packageData: PackageData[] = [
   },
   {
     name: "Studio",
-    imageObj: fullImagesGallery[19],
+    imageObj: packagesImages[3],
     price: 130,
     details: [
       "20-25+ edited photos",

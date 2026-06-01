@@ -4,8 +4,8 @@
   import ContactForm from "$lib/components/ContactForm.svelte";
   import QuickButtonLinks from "$lib/components/QuickButtonLinks.svelte";
   import Reviews from "$lib/components/Reviews.svelte";
-  import { fullImagesMainCarousel } from "$lib/data/carouselImageData";
   import { BASE_APP_TITLE, BASE_APP_URL } from "$lib/data/constants";
+  import { homeCarouselImagesOrdered } from "$lib/data/imageData";
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
 </svelte:head>
 
 <main>
-  <Carousel imageData={fullImagesMainCarousel} />
+  <Carousel imageData={homeCarouselImagesOrdered} />
   <QuickButtonLinks />
   <About />
   <Reviews />

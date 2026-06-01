@@ -139,7 +139,7 @@ svg {
   --font-weight-regular: 400;
   --font-weight-bold: 600;
 
-  --font-size-sm: var(--font-size-14);
+  --font-size-sm: var(--font-size-16);
   --font-size-base: var(--font-size-18);
   --font-size-lg: var(--font-size-24);
   --font-size-xlg: var(--font-size-32);
@@ -152,8 +152,10 @@ svg {
   --color-bg-blue: var(--palette-blue-base);
   --color-bg-brand: var(--palette-brand);
   --color-bg-tan: var(--palette-tan);
+  --color-bg-tan-sunken: var(--palette-tan-dark);
   --color-bg-navy: var(--palette-navy);
   --color-bg-white: var(--palette-white);
+  --color-bg-grey: var(--palette-grey-300);
 
   --color-brand-hover: var(--palette-brand-dark);
   --color-blue-hover: var(--palette-blue-dark);
@@ -247,7 +249,7 @@ a {
 .btn {
   padding: var(--space-16);
 
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 
   cursor: pointer;
   border-radius: var(--radius-base);

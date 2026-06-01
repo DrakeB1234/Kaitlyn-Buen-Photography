@@ -2,7 +2,10 @@
   import { emailLink } from "$lib/helpers/helpers";
   import Icon from "./Icon.svelte";
 
-  const { variant = "brand" }: { variant?: "brand" | "white" } = $props();
+  const {
+    variant = "brand",
+    textareaPlaceholder = "Hello Kaitlyn! I am interested in booking a appointment with you for a couples shoot!",
+  }: { variant?: "brand" | "white"; textareaPlaceholder?: string } = $props();
 
   const emailto: string = emailLink;
   let subject: string = $state("Photography Services");
@@ -18,7 +21,7 @@
     <label for="message" class={"text-variant-" + variant}>Message</label>
     <textarea
       id="message"
-      placeholder="Hello Kaitlyn! I am interested in booking a appointment with you for a couples shoot!"
+      placeholder={textareaPlaceholder}
       bind:value={message}
     ></textarea>
     <a

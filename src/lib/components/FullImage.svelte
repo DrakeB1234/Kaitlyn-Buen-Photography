@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fullImagesGallery, type ImageData } from "$lib/data/imageData";
+  import { galleryFullImages, type ImageData } from "$lib/data/imageData";
   import { gestures } from "$lib/helpers/gestures";
   import Icon from "./Icon.svelte";
 
@@ -11,7 +11,7 @@
   let { imgNum = $bindable(), closeFunc }: Props = $props();
 
   const MIN_IMAGES_LENGTH = 0;
-  const MAX_IMAGES_LENGTH = fullImagesGallery.length - 1;
+  const MAX_IMAGES_LENGTH = galleryFullImages.length - 1;
 
   async function handleSharePressed() {
     try {
@@ -24,7 +24,7 @@
     }
   }
 
-  let selectedImgObj: ImageData = $derived(fullImagesGallery[imgNum]);
+  let selectedImgObj: ImageData = $derived(galleryFullImages[imgNum]);
   let currentImgName = $derived(`IMG_${100 + imgNum}`);
 
   function navigate(direction: number) {

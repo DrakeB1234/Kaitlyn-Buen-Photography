@@ -5,6 +5,11 @@
 	import Navbar from "$lib/components/Navbar.svelte";
 	import Footer from "$lib/components/Footer.svelte";
 	import { beforeNavigate } from "$app/navigation";
+	import {
+		APP_META_DESCRIPTION,
+		APP_META_IMAGE_URL,
+		BASE_APP_URL,
+	} from "$lib/data/constants";
 
 	injectAnalytics({
 		mode: dev ? "development" : "production",
@@ -33,33 +38,27 @@
 		property="og:title"
 		content="Kaitlyn Buen Photography | Springfield, MO Photographer"
 	/>
-	<meta
-		property="og:description"
-		content="Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."
-	/>
-	<meta property="og:url" content="https://kaitlynbuenphotography.com/" />
-	<meta
-		property="og:image"
-		content="https://www.kaitlynbuenphotography.com/images/full/gallery/IMG_107.webp"
-	/>
+	<meta property="og:description" content={APP_META_DESCRIPTION} />
+	<meta property="og:url" content={BASE_APP_URL} />
+	<meta property="og:image" content={APP_META_IMAGE_URL} />
 
 	{@html `<script type="application/ld+json">\
 		{\
       "@context": "https://schema.org",\
       "@type": "LocalBusiness",\
       "name": "Kaitlyn Buen Photography",\
-      "image": "https://kaitlynbuenphotography.com/images/full/gallery/IMG_0279.webp",\
+      "image": "${APP_META_IMAGE_URL}",\
       "address": {\
         "@type": "PostalAddress",\
         "addressLocality": "Springfield",\
         "addressRegion": "MO",\
         "addressCountry": "US"\
       },\
-      "url": "https://kaitlynbuenphotography.com",\
+      "url": "${BASE_APP_URL}",\
       "priceRange": "$$",\
       "hasMap": "https://www.google.com/maps/place/Springfield,+MO",\
       "servesCuisine": "Photography",\
-      "description": "Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."\
+      "description": "${APP_META_DESCRIPTION}"\
     }\
   </script>\
 	`}

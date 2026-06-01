@@ -78,7 +78,7 @@
   }
   .carousel-content {
     position: relative;
-    min-height: 450px;
+    min-height: 500px;
     overflow: hidden;
     max-width: 800px;
     margin-inline: auto;

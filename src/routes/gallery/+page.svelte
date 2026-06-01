@@ -1,7 +1,7 @@
 <script lang="ts">
   import FullImage from "$lib/components/FullImage.svelte";
   import { BASE_APP_TITLE, BASE_APP_URL } from "$lib/data/constants";
-  import { thumbnailsImagesGallery } from "$lib/data/imageData";
+  import { galleryThumbnailsImages } from "$lib/data/imageData";
 
   let showFullImage: boolean = $state(false);
 
@@ -27,7 +27,7 @@
 
 <main>
   <section class="masonry" id="gallery">
-    {#each thumbnailsImagesGallery as item, i (i)}
+    {#each galleryThumbnailsImages as item, i (i)}
       <img
         loading="lazy"
         src={item.url}
