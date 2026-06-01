@@ -2,7 +2,7 @@
   <section class="about-me">
     <img
       class="about-me-image"
-      src="/picofme.webp"
+      src="images/picofme.webp"
       alt="picofme"
       loading="lazy"
       width="500"

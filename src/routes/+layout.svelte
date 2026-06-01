@@ -28,10 +28,7 @@
 <svelte:head>
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-	<meta
-		name="description"
-		content="Photographer local to Springfield, MO. Creating relaxed, comfortable atmospheres."
-	/>
+	<meta name="description" content={APP_META_DESCRIPTION} />
 
 	<meta property="og:type" content="website" />
 	<meta
@@ -45,7 +42,7 @@
 	{@html `<script type="application/ld+json">\
 		{\
       "@context": "https://schema.org",\
-      "@type": "LocalBusiness",\
+      "@type": "PhotographyBusiness",\
       "name": "Kaitlyn Buen Photography",\
       "image": "${APP_META_IMAGE_URL}",\
       "address": {\
@@ -56,8 +53,6 @@
       },\
       "url": "${BASE_APP_URL}",\
       "priceRange": "$$",\
-      "hasMap": "https://www.google.com/maps/place/Springfield,+MO",\
-      "servesCuisine": "Photography",\
       "description": "${APP_META_DESCRIPTION}"\
     }\
   </script>\

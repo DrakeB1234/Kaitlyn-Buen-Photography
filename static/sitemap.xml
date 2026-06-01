@@ -6,28 +6,33 @@
       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://www.kaitlynbuenphotography.com/</loc>
-  <lastmod>2026-05-29T17:29:00+00:00</lastmod>
+  <lastmod>2026-06-01T12:34:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.kaitlynbuenphotography.com/about</loc>
-  <lastmod>2026-05-29T17:29:00+00:00</lastmod>
+  <loc>https://www.kaitlynbuenphotography.com/wedding</loc>
+  <lastmod>2026-06-01T12:34:00+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.kaitlynbuenphotography.com/about</loc>
+  <lastmod>2026-06-01T12:34:00+00:00</lastmod>
+  <priority>0.50</priority>
 </url>
 <url>
   <loc>https://www.kaitlynbuenphotography.com/pricing</loc>
-  <lastmod>2026-05-29T17:29:00+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2026-06-01T12:34:00+00:00</lastmod>
+  <priority>0.50</priority>
 </url>
 <url>
   <loc>https://www.kaitlynbuenphotography.com/gallery</loc>
-  <lastmod>2026-05-29T17:29:00+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2026-06-01T12:34:00+00:00</lastmod>
+  <priority>0.50</priority>
 </url>
 <url>
   <loc>https://www.kaitlynbuenphotography.com/contact</loc>
-  <lastmod>2026-05-29T17:29:00+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2026-06-01T12:34:00+00:00</lastmod>
+  <priority>0.50</priority>
 </url>
 
 </urlset>
