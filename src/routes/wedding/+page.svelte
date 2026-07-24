@@ -74,11 +74,11 @@
             Starting at <span class="text-lg">${pkg.price}</span>
           </h2>
         </div>
-        <div class="details-container">
+        <ul class="details-container">
           {#each pkg.details as detail, i (i)}
-            <p>{detail}</p>
+            <li class="details-list-item">{detail}</li>
           {/each}
-        </div>
+        </ul>
         <div class="link-container">
           <a href={messengerLink} target="_blank"
             >Interested? Contact me! <Icon
@@ -173,6 +173,8 @@
   }
 
   .content-container {
+    display: flex;
+    flex-direction: column;
     border: 4px double var(--color-border);
   }
 
@@ -188,12 +190,21 @@
 
   .details-container {
     padding: var(--space-24);
+    margin-left: var(--space-16);
     padding-top: 0;
+  }
+
+  .details-list-item {
+    line-height: 1.5;
+  }
+  .details-list-item:not(:last-child) {
+    padding-bottom: var(--space-12);
   }
 
   .link-container {
     padding: var(--space-24) var(--space-16);
     padding-top: 0;
+    margin-top: auto;
   }
 
   a {

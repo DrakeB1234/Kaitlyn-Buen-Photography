@@ -189,6 +189,21 @@ export const galleryFullImages: ImageData[] = [
     "url": "/images/gallery/full/IMG_136.webp",
     "width": 1600,
     "height": 1236
+  },
+  {
+    "url": "/images/gallery/full/IMG_137.webp",
+    "width": 1600,
+    "height": 2070
+  },
+  {
+    "url": "/images/gallery/full/IMG_138.webp",
+    "width": 1600,
+    "height": 1236
+  },
+  {
+    "url": "/images/gallery/full/IMG_139.webp",
+    "width": 1600,
+    "height": 1236
   }
 ];
 
@@ -377,6 +392,21 @@ export const galleryThumbnailsImages: ImageData[] = [
     "url": "/images/gallery/thumbnails/IMG_136.webp",
     "width": 400,
     "height": 309
+  },
+  {
+    "url": "/images/gallery/thumbnails/IMG_137.webp",
+    "width": 400,
+    "height": 518
+  },
+  {
+    "url": "/images/gallery/thumbnails/IMG_138.webp",
+    "width": 400,
+    "height": 309
+  },
+  {
+    "url": "/images/gallery/thumbnails/IMG_139.webp",
+    "width": 400,
+    "height": 309
   }
 ];
 
@@ -389,6 +419,11 @@ export const weddingCarouselImages: ImageData[] = [
   {
     "url": "/images/wedding/carousel/IMG_101.webp",
     "width": 518,
+    "height": 400
+  },
+  {
+    "url": "/images/wedding/carousel/IMG_116.webp",
+    "width": 600,
     "height": 400
   },
   {
@@ -460,7 +495,12 @@ export const weddingCarouselImages: ImageData[] = [
     "url": "/images/wedding/carousel/IMG_115.webp",
     "width": 518,
     "height": 400
-  }
+  },
+  {
+    "url": "/images/wedding/carousel/IMG_117.webp",
+    "width": 600,
+    "height": 400
+  },
 ];
 
 export const packagesImages: ImageData[] = [

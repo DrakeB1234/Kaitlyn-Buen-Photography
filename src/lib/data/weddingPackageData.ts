@@ -17,7 +17,8 @@ export const weddingPackageData: PackageData[] = [
     price: 675,
     details: [
       "3 Hours of Coverage on Your Wedding Day",
-      "One 8x14 Print of your choice from your gallery",
+      "Includes ceremony coverage, detail shots, wedding party, family, and couple portraits",
+      "One 8x14 Print of your choice",
       "Professionally edited online gallery",
       "Photographer + Asistant",
     ],
@@ -28,9 +29,21 @@ export const weddingPackageData: PackageData[] = [
     price: 975,
     details: [
       "6 Hours of Coverage on Your Wedding Day",
-      "One 8x14 Print of your choice from your gallery",
+      "Includes ceremony coverage, detail shots, wedding party, family, and couple portraits",
+      "Wedding morning preparations and candid reception moments are also included.",
+      "One 8x14 Print of your choice",
       "Professionally edited online gallery",
       "Photographer + Asistant",
+    ],
+    message: "Hello Kaitlyn! I am interested in the Couples package listed on your site."
+  },
+  {
+    name: "Engagement Package",
+    price: 150,
+    details: [
+      "25 - 30 edited images",
+      "1 hour photoshoot",
+      "Lots of locations to choose from",
     ],
     message: "Hello Kaitlyn! I am interested in the Couples package listed on your site."
   },
