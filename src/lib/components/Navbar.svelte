@@ -65,9 +65,6 @@
       <a class:active={currentPath === "/about"} href="/about">ABOUT</a>
     </li>
     <li>
-      <a class:active={currentPath === "/wedding"} href="/wedding">WEDDING</a>
-    </li>
-    <li>
       <a class:active={currentPath === "/pricing"} href="/pricing">PRICING</a>
     </li>
     <li>

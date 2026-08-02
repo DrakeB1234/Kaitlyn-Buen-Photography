@@ -18,7 +18,7 @@ export const packageData: PackageData[] = [
   {
     name: "Family",
     imageObj: packagesImages[1],
-    price: 150,
+    price: 175,
     details: [
       "20-25+ edited photos",
       "1 hour photoshoot",
@@ -28,7 +28,7 @@ export const packageData: PackageData[] = [
   {
     name: "Couples",
     imageObj: packagesImages[0],
-    price: 75,
+    price: 150,
     details: [
       "20-25+ edited photos",
       "45 minute photoshoot",
@@ -36,26 +36,25 @@ export const packageData: PackageData[] = [
     message: "Hello Kaitlyn! I am interested in the Couples package listed on your site."
   },
   {
+    name: "Engagement",
+    imageObj: packagesImages[3],
+    price: 175,
+    details: [
+      "20-25+ edited photos",
+      "30 minute photoshoot",
+    ],
+    message: "Hello Kaitlyn! I am interested in the Studio package listed on your site."
+  },
+  {
     name: "Seniors",
     imageObj: packagesImages[2],
-    price: 100,
+    price: 150,
     details: [
       "20-25+ edited photos",
       "1 hour photoshoot",
       "1 outfit change",
     ],
     message: "Hello Kaitlyn! I am interested in the Seniors package listed on your site."
-  },
-  {
-    name: "Studio",
-    imageObj: packagesImages[3],
-    price: 130,
-    details: [
-      "20-25+ edited photos",
-      "30 minute photoshoot",
-      "$40 booking deposit",
-    ],
-    message: "Hello Kaitlyn! I am interested in the Studio package listed on your site."
   },
 ];
 
@@ -67,6 +66,6 @@ export const packageAdditionsData = {
   fees: [
     { price: 40, detail: "Studio 30 min booking" },
     { price: 20, detail: "Travel fee" },
-    { price: 15, detail: "Non-refundable deposit that goes towards the full package price to hold your booking." },
+    { price: 30, detail: "Non-refundable deposit that goes towards the full package price to hold your booking." },
   ] as AdditionData[]
 }

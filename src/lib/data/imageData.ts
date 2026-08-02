@@ -520,8 +520,8 @@ export const packagesImages: ImageData[] = [
     "height": 450
   },
   {
-    "url": "/images/packages/IMG_studio.webp",
-    "width": 630,
+    "url": "/images/packages/IMG_engagement.webp",
+    "width": 675,
     "height": 450
   }
 ];
