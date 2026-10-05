@@ -14,6 +14,8 @@
 </svelte:head>
 
 <main>
+  <h2 class="text-lg page-heading">Package Information</h2>
+
   <div class="content">
     {#each data as pkg, i (i)}
       <div class="content-container">
@@ -102,10 +104,26 @@
     padding: var(--space-16);
     background-color: var(--color-bg-tan);
   }
+
+  .page-heading {
+    max-width: 650px;
+    margin: auto;
+    margin-top: var(--space-36);
+    margin-bottom: var(--space-24);
+  }
+
   .content {
+    display: grid;
+    gap: var(--space-36);
     max-width: 650px;
     margin: auto;
   }
+
+  .content-container {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
   .package-image {
     position: relative;
   }
@@ -129,12 +147,14 @@
     height: auto;
     object-fit: cover;
     object-position: center 30%;
-    max-height: 350px;
+    max-height: 300px;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .content-container {
-    border: 4px double var(--color-border);
-    margin-bottom: var(--space-36);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-1);
+    background-color: oklch(94% 0.016 67.483);
   }
 
   .heading-container {

@@ -19,4 +19,8 @@ export const reviewsData = [
     message: "The pictures were we had taken came back quickly and they were so cute, the lighting chose for the pictures was great and i would recommend getting your pictures done with Kaitlyn!",
     name: "Ella"
   },
+  {
+    message: "Kaitlyn did an amazing job photographing my parents 40th anniversary party! She was a huge help that day beyond photography and we are grateful to of had her!",
+    name: "Erin"
+  }
 ]

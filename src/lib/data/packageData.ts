@@ -50,7 +50,7 @@ export const packageData: PackageData[] = [
     imageObj: packagesImages[2],
     price: 150,
     details: [
-      "20-25+ edited photos",
+      "30+ edited photos",
       "1 hour photoshoot",
       "1 outfit change",
     ],
